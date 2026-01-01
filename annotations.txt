@@ -1,0 +1,27 @@
+-make sure project doesn't break when/if Mercado Livre layout changes.
+
+-is it efficient gathering data from 10,000 or so pages?
+
+-use dbt, Apache Airflow, Azure, etc.
+
+-look for APIs.
+
+-make post-processing pipelines due to regex(?)
+
+-for scrapy, use autothrotle and see what is the best download_delay for your use case. also, depending on the site, you may need to integrate Playwright if there is use of Javascript.
+
+-can your scraper load more pages?
+
+-can your scraper NOT add duplicated data when the E-commerce updates? Can your scraper, at the same time, add this new data?
+
+-check and deal with price being 0 or negative.
+
+-on scrapy, set cookies_enabled to false.
+
+-still on scrapy, if you store large lists in memory instead of using Generators (yield), memory usage will spike.
+
+-use Great Expectations to increase data quality.
+
+-learn Linux and use WSL. Also learn Star Schemas, Snowflake/BigQuery and how data works overall.
+
+-At the middle, somewhere, you might want to look at Java.
