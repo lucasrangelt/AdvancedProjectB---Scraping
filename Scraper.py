@@ -1,26 +1,15 @@
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import numpy as np
-import ast
 import scrapy
 import re
 
 headers = {"User-Agent": "Mozilla/5.0"}
-# response = requests.get(url, headers=headers)
-
-# items = soup.find_all('li', class_='ui-search-layout__item')
 
 class MercadoLivreSpider(scrapy.Spider):
     name = 'cute_spider'
-    url = "https://lista.mercadolivre.com.br/notebook#D[A:notebook]"
-    custom_settings = {
-        'USER_AGENT_LIST': 'DOWNLOADER_MIDDLEWARES',
-        'ROBOTSTXT_OBEY': True,
-        'DOWNLOAD_DELAY': 3,
-        'AUTOTHROTTLE_ENABLED': True,
-        'AUTOTHROTTLE_START_DELAY': 5,
-        'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-    }
+    url = 'https://lista.mercadolivre.com.br/notebook#D[A:notebook]'
+
+    def start_requests(self):
+        yield scrapy.Request('https://lista.mercadolivre.com.br/notebook#D[A:notebook]', meta={'playwright': True})
+    
     def parse(self, response):
         items = response.css('li.ui-search-layout__item')
         for i in items:
@@ -44,11 +33,5 @@ class MercadoLivreSpider(scrapy.Spider):
             }
         next_page = response.css('li.andes-pagination__button--next a::attr(href)').get()
         if next_page:
-            yield response.follow(next_page, callable=self.parse)
-# df = pd.DataFrame(clean_data())
-# connection = sqlite3.connect('mercado_livre_data.db')
-# df.to_sql('listings', connection, if_exists="replace", index="False")
+            yield response.follow(next_page, callback=self.parse, meta={'playwright': True})
 
-# test_sql = pd.read_sql('SELECT * FROM listings WHERE memory != "N/A" LIMIT 5', connection)
-# print(test_sql)
-# connection.close()

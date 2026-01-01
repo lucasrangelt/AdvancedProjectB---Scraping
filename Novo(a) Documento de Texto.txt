@@ -1,39 +1,7 @@
-alright, as i never did this, i need help with some stepping stones. i changed it to Scrapy in order to be more professional. bearing in mind i want to gain a lot of visibility and do things with scalability and quality in mind, what should be my next step given the code:
+thank you for the insights. i didn't actually plan to save data to JSON or CSV ever. i was actually thinking of working with Azure and use it as a database for my project. any counter-recommendations?
 
-import pandas as pd
-import matplotlib.pyplot as plt
-import numpy as np
-import ast
-import scrapy
-import re
+also, you said i should use WSL (i already have) or Linux. what's the difference between using Linux while working in PostgreSQL and using Windows? How does it change anything?
 
-headers = {"User-Agent": "Mozilla/5.0"}
-# response = requests.get(url, headers=headers)
+if i already installed everything on Windows, how do i install WSL and what do i do later?
 
-# items = soup.find_all('li', class_='ui-search-layout__item')
-
-class MercadoLivreSpider(scrapy.Spider):
-    name = 'cute_spider'
-    url = "https://lista.mercadolivre.com.br/notebook#D[A:notebook]"
-    def parse(self, response):
-        items = response.css('li.ui-search-layout__item')
-        for i in items:
-            title = i.css('h3.poly-component__title-wrapper::text').get() or ""
-            clean_title = re.sub(r'\bNOVO|FRETE GRATIS|FRETE GRÁTIS|GAMER|PROMOCAO|PROMOÇAO|PROMOCÃO|PROMOÇÃO|OFERTA|™|®', '', title, flags=re.IGNORECASE)
-            clean_title = clean_title.replace("  ", " ")
-
-            price = i.css('span.andes-money-amount__fraction::text').get() or "0"
-            clean_price = int(price.replace(".", ""))
-
-            ram = re.search(r'(\d+\s*GB)\s(?=RAM|MEMORIA|MEMÓRIA)', clean_title, flags=re.IGNORECASE)
-            storage = re.search(r'(\d+\s*GB|\d+\s*TB)\sSSD', clean_title, flags=re.IGNORECASE)
-            color = re.search(r'\b(?:color|cor)?\s\b(PRETO|BRANCO|CINZA|VERMELHO|AZUL|ROSA|PRATA|AMARELO|VERDE|BLACK|WHITE|SILVER|GREY|GRAY)', clean_title, flags=re.IGNORECASE)
-
-            yield {
-                "full_title": clean_title,
-                "memory": ram.group(1) if ram else "N/A",
-                "storage": storage.group(1) if storage else "N/A",
-                "color": color.group(1) if color else "N/A",
-                "price": clean_price
-            }
-        next_page = response.css('li.andes-pagination__button--next a::attr(href)').get()
+first of all, happy new year. it is the 01 of January of 2026, and i have a question: i need this done by the 01 of february of this year. how possible is this given the knowledges i still have? bear in mind, that i want this to be a big thing showcasing multiple different tools, especially integration with Azure. should i use Azure now, and if yes, how?
