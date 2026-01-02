@@ -1,5 +1,3 @@
-thank you for the insights. i didn't actually plan to save data to JSON or CSV ever. i was actually thinking of working with Azure and use it as a database for my project. any counter-recommendations?
-
 also, you said i should use WSL (i already have) or Linux. what's the difference between using Linux while working in PostgreSQL and using Windows? How does it change anything?
 
 if i already installed everything on Windows, how do i install WSL and what do i do later?

@@ -1,14 +1,14 @@
 import scrapy
 import re
 
-headers = {"User-Agent": "Mozilla/5.0"}
-
 class MercadoLivreSpider(scrapy.Spider):
     name = 'cute_spider'
-    url = 'https://lista.mercadolivre.com.br/notebook#D[A:notebook]'
+    allowed_domains = ['mercadolivre.com.br']
+    start_urls = ['https://lista.mercadolivre.com.br/notebook#D[A:notebook]']
 
     def start_requests(self):
-        yield scrapy.Request('https://lista.mercadolivre.com.br/notebook#D[A:notebook]', meta={'playwright': True})
+        for url in self.start_urls:
+            yield scrapy.Request(url, meta={'playwright': True})
     
     def parse(self, response):
         items = response.css('li.ui-search-layout__item')
@@ -20,8 +20,8 @@ class MercadoLivreSpider(scrapy.Spider):
             price = i.css('span.andes-money-amount__fraction::text').get() or "0"
             clean_price = int(price.replace(".", ""))
 
-            ram = re.search(r'(\d+\s*GB)\s(?=RAM|MEMORIA|MEMÓRIA)', clean_title, flags=re.IGNORECASE)
-            storage = re.search(r'(\d+\s*GB|\d+\s*TB)\sSSD', clean_title, flags=re.IGNORECASE)
+            ram = re.search(r'(\d+\s*GB)\s*(?=RAM|MEMORIA|MEMÓRIA)', clean_title, flags=re.IGNORECASE)
+            storage = re.search(r'(\d+\s*GB|\d+\s*TB)\s*SSD', clean_title, flags=re.IGNORECASE)
             color = re.search(r'\b(?:color|cor)?\s\b(PRETO|BRANCO|CINZA|VERMELHO|AZUL|ROSA|PRATA|AMARELO|VERDE|BLACK|WHITE|SILVER|GREY|GRAY)', clean_title, flags=re.IGNORECASE)
 
             yield {

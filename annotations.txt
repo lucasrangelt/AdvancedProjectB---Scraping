@@ -25,3 +25,10 @@
 -learn Linux and use WSL. Also learn Star Schemas, Snowflake/BigQuery and how data works overall.
 
 -At the middle, somewhere, you might want to look at Java.
+
+
+Potential Pitfalls
+
+The biggest risk is "Tutorial Hell"—copying code without understanding the configuration. Because you are using dbt, you will need to learn some basic Jinja (Python-like templating) and YAML.
+
+        Pro-Tip: Focus heavily on the dbt + Great Expectations part. This is where the "magic" happens in modern data stacks, and 	it’s the most hireable skill on your list right now.
