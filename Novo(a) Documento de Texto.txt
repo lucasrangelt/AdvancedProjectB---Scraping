@@ -1,0 +1,5 @@
+also, you said i should use WSL (i already have) or Linux. what's the difference between using Linux while working in PostgreSQL and using Windows? How does it change anything?
+
+if i already installed everything on Windows, how do i install WSL and what do i do later?
+
+first of all, happy new year. it is the 01 of January of 2026, and i have a question: i need this done by the 01 of february of this year. how possible is this given the knowledges i still have? bear in mind, that i want this to be a big thing showcasing multiple different tools, especially integration with Azure. should i use Azure now, and if yes, how?

@@ -1,0 +1,3 @@
+Dia 31/12: Planejei, trabalhei no Scrapy e fui introduzido ao WSL2.
+Dia 1: Planejei, trabalhei no Scrapy, integrei Playwright ao programa e integrei WSL2 ao VS Code.
+Dia 2: 
