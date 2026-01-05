@@ -4,3 +4,4 @@ Dia 31/12: Planejei, trabalhei no Scrapy e fui introduzido ao WSL2.
 Dia 1: Planejei, trabalhei no Scrapy, integrei Playwright ao programa e integrei WSL2 ao VS Code.
 Dia 2: Planejei, instalei o Docker, movi meu projeto para \\wsl$ e remapeei o repositório do GitHub ao novo local do projeto.
 Dia 3: Planejei, instalei um ambiente virtual para evitar "dependency hell" e Dev Containers para minhas extensões.
+Dia 4: Terminei de integrar toda a principal infraestrutura (Windows, WSL2, VS Code, .venv, Docker, GitHub, PostgreSQL).
