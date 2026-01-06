@@ -1,5 +1,6 @@
 import scrapy
 import re
+from items import NotebookItem
 
 class MercadoLivreSpider(scrapy.Spider):
     name = 'cute_spider'
@@ -24,13 +25,13 @@ class MercadoLivreSpider(scrapy.Spider):
             storage = re.search(r'(\d+\s*GB|\d+\s*TB)\s*SSD', clean_title, flags=re.IGNORECASE)
             color = re.search(r'\b(?:color|cor)?\s\b(PRETO|BRANCO|CINZA|VERMELHO|AZUL|ROSA|PRATA|AMARELO|VERDE|BLACK|WHITE|SILVER|GREY|GRAY)', clean_title, flags=re.IGNORECASE)
 
-            yield {
-                "full_title": clean_title,
-                "memory": ram.group(1) if ram else "N/A",
-                "storage": storage.group(1) if storage else "N/A",
-                "color": color.group(1) if color else "N/A",
-                "price": clean_price
-            }
+            item = NotebookItem()
+            item["full_title"] = clean_title
+            item["memory"] = ram.group(1) if ram else "N/A"
+            item["storage"] = storage.group(1) if storage else "N/A"
+            item["color"] = color.group(1) if color else "N/A"
+            item["price"] = clean_price
+            yield item
         next_page = response.css('li.andes-pagination__button--next a::attr(href)').get()
         if next_page:
             yield response.follow(next_page, callback=self.parse, meta={'playwright': True})

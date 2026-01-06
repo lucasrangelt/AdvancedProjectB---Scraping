@@ -2,6 +2,4 @@ do contractors from developed countries look for data engineering juniors from a
 
 how interested would they be in a web-scraping project for e-commerce (using scrapy)?
 
-hello. it is the 5th of January as of now. i'm here to give good news. i believe i've started
-
-phew, thanks. okay, now for the scraper. i would like to know what is the process of the Scrapy framework.
+what if i want to have more than one scraper (that is, one for each of the two websites)?
