@@ -4,7 +4,7 @@ services:
       context: ..
       dockerfile: .devcontainer/Dockerfile
     volumes:
-      - ..:/workspaces/${localWorkspaceFolderBasename}:cached
+      - ..:/workspaces/app:cached
     command: sleep infinity
     depends_on:
       - db
