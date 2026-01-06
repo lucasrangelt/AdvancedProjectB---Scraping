@@ -5,11 +5,15 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 
 DOWNLOAD_HANDLERS = {
     'http' : 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
-    'https' : 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler'
+    'https' : 'scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler',
 }
 
 TWISTED_REACTOR = 'twisted.internet.asyncioreactor.AsyncioSelectorReactor'
 PLAYWRIGHT_BROWSER_TYPE = 'chromium'
 PLAYWRIGHT_LAUNCH_OPTIONS = {
-    'headless': True
+    'headless': True,
+}
+
+ITEM_PIPELINES = {
+    "pipelines.PostgresPipeline": 300,
 }

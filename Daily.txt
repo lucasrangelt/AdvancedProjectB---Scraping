@@ -6,4 +6,4 @@ Dia 2: Planejei, instalei o Docker, movi meu projeto para \\wsl$ e remapeei o re
 Dia 3: Planejei, instalei um ambiente virtual para evitar "dependency hell" e Dev Containers para minhas extensões.
 Dia 4: Trabalhei para integrar toda a principal infraestrutura (Windows, WSL2, VS Code, .venv, Docker, GitHub, PostgreSQL).
 Dia 5: Terminei de integrar toda a principal infraestrutura, corrigindo bugs e erros de mapeamento no GitHub.
-Dia 6: 
+Dia 6: Integrei o scraper e DBeaver com o PostgreSQL do Docker.
