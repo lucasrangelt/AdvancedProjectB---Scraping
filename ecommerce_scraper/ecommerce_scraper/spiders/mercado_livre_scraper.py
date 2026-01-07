@@ -9,7 +9,7 @@ class MercadoLivreSpider(scrapy.Spider):
 
     def start_requests(self):
         for url in self.start_urls:
-            yield scrapy.Request(url, meta={'playwright': True})
+            yield scrapy.Request(url)
     
     def parse(self, response):
         items = response.css('li.ui-search-layout__item')
@@ -34,5 +34,4 @@ class MercadoLivreSpider(scrapy.Spider):
             yield item
         next_page = response.css('li.andes-pagination__button--next a::attr(href)').get()
         if next_page:
-            yield response.follow(next_page, callback=self.parse, meta={'playwright': True})
-
+            yield response.follow(next_page, callback=self.parse)

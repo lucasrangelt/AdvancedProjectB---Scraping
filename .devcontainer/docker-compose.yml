@@ -13,7 +13,7 @@ services:
     image: postgres:15
     restart: unless-stopped
     ports:
-      - "5432:5432"
+      - "5433:5432"
     environment:
       POSTGRES_USER: lucasrangel
       POSTGRES_PASSWORD: scrapyword

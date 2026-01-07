@@ -34,6 +34,8 @@
 
 -Leave artifacts / take pics to show it was developed in WSL2.
 
+-Disclose AI usage.
+
 Potential Pitfalls:
 
 The biggest risk is "Tutorial Hell"—copying code without understanding the configuration. Because you are using dbt, you will need to learn some basic Jinja (Python-like templating) and YAML.
