@@ -25,7 +25,8 @@ class PostgresPipeline:
                 memory TEXT,
                 storage TEXT,
                 color TEXT,
-                price TEXT
+                price TEXT,
+                scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
         """)
         self.connection.commit()

@@ -1,9 +1,9 @@
 import scrapy
 import re
-from items import NotebookItem
+from ecommerce_scraper.items import NotebookItem
 
 class MercadoLivreSpider(scrapy.Spider):
-    name = 'cute_spider'
+    name = 'cute_mercado_livre_spider'
     allowed_domains = ['mercadolivre.com.br']
     start_urls = ['https://lista.mercadolivre.com.br/notebook#D[A:notebook]']
 
