@@ -1,5 +1,1 @@
-do contractors from developed countries look for data engineering juniors from abroad? what kind of professionals are they most interested in?
-
-how interested would they be in a web-scraping project for e-commerce (using scrapy)?
-
 what if i want to have more than one scraper (that is, one for each of the two websites)?

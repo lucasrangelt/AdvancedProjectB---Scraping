@@ -26,6 +26,7 @@ class PostgresPipeline:
                 storage TEXT,
                 color TEXT,
                 price TEXT,
+                rating TEXT,
                 scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
         """)
@@ -33,13 +34,14 @@ class PostgresPipeline:
     
     def process_item(self, item, spider):
         self.cur.execute("""
-            INSERT INTO notebooks (full_title, memory, storage, color, price) VALUES (%s, %s, %s, %s, %s)
+            INSERT INTO notebooks (full_title, memory, storage, color, price, rating) VALUES (%s, %s, %s, %s, %s, %s)
             """, (
             item["full_title"],
             item["memory"],
             item["storage"],
             item["color"],
-            item["price"]
+            item["price"],
+            item["rating"]
         ))
         self.connection.commit()
         return item
