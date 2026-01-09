@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw_data
+    database: scrapy_data
+    schema: public
+    tables:
+    - name: notebooks
+      description: "Raw notebook data scraped from the web."
+      columns:
+      - name: price
+        description: "Notebook price" #these column names are used to attach tests and documentation for coworkers
