@@ -1,0 +1,12 @@
+my_transformations:
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: db
+      port: 5432
+      user: lucasrangel
+      pass: scrapyword
+      dbname: scrapy_data
+      schema: analytics
+  target: dev

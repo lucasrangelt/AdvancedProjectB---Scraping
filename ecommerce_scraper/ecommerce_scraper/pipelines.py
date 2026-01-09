@@ -25,8 +25,8 @@ class PostgresPipeline:
                 memory TEXT,
                 storage TEXT,
                 color TEXT,
-                price NUMERIC(10, 2),
-                rating NUMERIC(2, 2),
+                price TEXT,
+                rating TEXT,
                 scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
         """)

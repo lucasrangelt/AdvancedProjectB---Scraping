@@ -8,3 +8,4 @@ Dia 4: Trabalhei para integrar toda a principal infraestrutura (Windows, WSL2, V
 Dia 5: Terminei de integrar toda a principal infraestrutura, corrigindo bugs e erros de mapeamento no GitHub.
 Dia 6: Integrei o scraper e DBeaver com o PostgreSQL do Docker.
 Dia 7: Organizei, testei e corrigi bugs no scraper.
+Dia 8: Planejei, editei, testei o scraper e instalei as bibliotecas de dbt e Great Expectations.

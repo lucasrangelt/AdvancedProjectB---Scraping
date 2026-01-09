@@ -1,0 +1,14 @@
+name: 'my_transformations'
+version: '1.0.0'
+config-version: 2
+
+profile: 'my_transformations'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+
+models:
+  my_transformations:
+    materialized: table
