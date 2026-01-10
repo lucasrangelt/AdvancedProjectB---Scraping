@@ -38,6 +38,7 @@ class MercadoLivreSpider(scrapy.Spider):
             item["color"] = color.group(1) if color else "N/A"
             item["price"] = price if price else None
             item["rating"] = rating if rating else None
+            item["site_name"] = "mercado_livre"
             yield item
         next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
         if next_page:
