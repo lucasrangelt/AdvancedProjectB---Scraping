@@ -6,7 +6,7 @@ WITH products_to_dim as (
         memory,
         color,
     FROM
-        {{ref('notebooks')}}
+        {{ref('raw_data')}}
 )
 
 SELECT

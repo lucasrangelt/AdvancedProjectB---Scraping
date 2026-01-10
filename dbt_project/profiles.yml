@@ -8,5 +8,5 @@ my_transformations:
       user: lucasrangel
       pass: scrapyword
       dbname: scrapy_data
-      schema: clean_data
+      schema: my_dbt_schema
   target: dev

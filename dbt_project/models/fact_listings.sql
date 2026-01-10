@@ -5,4 +5,4 @@ SELECT
     scraped_at,
     site_name
 FROM
-    {{ref('notebooks')}}
+    {{ref('raw_data')}}
