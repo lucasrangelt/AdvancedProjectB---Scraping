@@ -1,4 +1,14 @@
-WITH products_to_dim as (
+
+  
+    
+
+  create  table "scrapy_data"."my_dbt_schema"."dim_products__dbt_tmp"
+  
+  
+    as
+  
+  (
+    WITH products_to_dim as (
     SELECT DISTINCT
         MD5(TRIM(LOWER(full_title)) || memory || storage || color) as product_key,
         full_title,
@@ -6,7 +16,7 @@ WITH products_to_dim as (
         memory,
         color
     FROM
-        {{ref('stg_data')}}
+        "scrapy_data"."my_dbt_schema"."stg_data"
 )
 
 SELECT
@@ -17,3 +27,5 @@ SELECT
     color
 FROM
     products_to_dim
+  );
+  

@@ -1,5 +1,15 @@
-WITH data_to_stg AS (
-    SELECT * FROM {{source('my_source', 'raw_data')}}
+
+  
+    
+
+  create  table "scrapy_data"."my_dbt_schema"."stg_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    WITH data_to_stg AS (
+    SELECT * FROM "scrapy_data"."public"."raw_data"
 )
 
 SELECT
@@ -14,3 +24,5 @@ SELECT
     site_name
 FROM
     data_to_stg
+  );
+  

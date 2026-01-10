@@ -5,4 +5,4 @@ SELECT
     scraped_at,
     site_name
 FROM
-    {{ref('stg_data')}}
+    "scrapy_data"."my_dbt_schema"."stg_data"
