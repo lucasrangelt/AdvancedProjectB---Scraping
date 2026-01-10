@@ -15,8 +15,8 @@ class MercadoLivreSpider(scrapy.Spider):
         items = response.css('li.ui-search-layout__item')
         for i in items:
             title = i.css('a.poly-component__title::text').get() or ""
-            # clean_title = re.sub(r'\bNOVO|FRETE GRATIS|FRETE GRÁTIS|GAMER|PROMOCAO|PROMOÇAO|PROMOCÃO|PROMOÇÃO|OFERTA|™|®', '', title, flags=re.IGNORECASE)
-            # clean_title = clean_title.replace("  ", " ")
+            clean_title = re.sub(r'\bNOVO|FRETE GRATIS|FRETE GRÁTIS|GAMER|PROMOCAO|PROMOÇAO|PROMOCÃO|PROMOÇÃO|OFERTA|™|®', '', title, flags=re.IGNORECASE)
+            clean_title = clean_title.replace("  ", " ")
 
             price = i.css('span.andes-money-amount__fraction::text').get() or None
             # if price is not None:
@@ -32,7 +32,7 @@ class MercadoLivreSpider(scrapy.Spider):
             color = re.search(r'\b(?:color|cor)?\s\b(PRETO|BRANCO|CINZA|VERMELHO|AZUL|ROSA|PRATA|AMARELO|VERDE|BLACK|WHITE|SILVER|GREY|GRAY)', title, flags=re.IGNORECASE)
 
             item = NotebookItem()
-            item["full_title"] = title
+            item["full_title"] = clean_title
             item["memory"] = ram.group(1) if ram else "N/A"
             item["storage"] = storage.group(1) if storage else "N/A"
             item["color"] = color.group(1) if color else "N/A"

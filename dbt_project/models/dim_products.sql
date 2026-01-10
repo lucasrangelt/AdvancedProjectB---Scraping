@@ -1,4 +1,19 @@
 WITH products_to_dim as (
     SELECT DISTINCT
-        
+        MD5(TRIM(LOWER(full_title)) || memory || storage || color) as product_key,
+        full_title,
+        storage,
+        memory,
+        color,
+    FROM
+        {{ref('notebooks')}}
 )
+
+SELECT
+    product_key,
+    full_title,
+    storage,
+    ram,
+    color
+FROM
+    products_to_dim
