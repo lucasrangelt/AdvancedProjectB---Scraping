@@ -12,3 +12,4 @@ class NotebookItem(scrapy.Item):
     color = scrapy.Field()
     price = scrapy.Field()
     rating = scrapy.Field()
+    site_name = scrapy.Field()

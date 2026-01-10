@@ -27,6 +27,7 @@ class PostgresPipeline:
                 color TEXT,
                 price TEXT,
                 rating TEXT,
+                site_name TEXT,
                 scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                 )
         """)
