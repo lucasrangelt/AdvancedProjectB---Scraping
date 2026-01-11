@@ -10,3 +10,4 @@ Dia 6: Integrei o scraper e DBeaver com o PostgreSQL do Docker.
 Dia 7: Organizei, testei e corrigi bugs no scraper.
 Dia 8: Planejei, editei, testei o scraper e instalei as bibliotecas de dbt e Great Expectations.
 Dia 9: Planejei e utilizei dbt para organizar dados e implementar uma Star Schema.
+Dia 10: Implementei Great Expectations do começo ao fim.
