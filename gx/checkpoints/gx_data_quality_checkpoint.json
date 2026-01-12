@@ -1,0 +1,12 @@
+{
+  "actions": [],
+  "id": "a238bd07-8f46-43f6-aa0b-a899392c65d3",
+  "name": "gx_data_quality_checkpoint",
+  "result_format": "SUMMARY",
+  "validation_definitions": [
+    {
+      "id": "16cdfe11-570a-49dc-87e9-7f22e5092aba",
+      "name": "my_validation"
+    }
+  ]
+}

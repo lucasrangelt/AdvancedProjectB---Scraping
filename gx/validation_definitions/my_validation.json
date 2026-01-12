@@ -1,0 +1,22 @@
+{
+  "data": {
+    "asset": {
+      "id": "1afff85e-6cc5-4a6e-acb8-049659f6e1d9",
+      "name": "gx_stg_data"
+    },
+    "batch_definition": {
+      "id": "befad94e-bd8b-480d-95e3-00aa562f269a",
+      "name": "whole_table_batch"
+    },
+    "datasource": {
+      "id": "fa1444bb-f1cb-48e2-abe1-a55b0113b510",
+      "name": "my_postgres_db"
+    }
+  },
+  "id": "16cdfe11-570a-49dc-87e9-7f22e5092aba",
+  "name": "my_validation",
+  "suite": {
+    "id": "aa40f369-c71c-4ad6-a0d6-b0f8fa56aaa4",
+    "name": "data_quality_suite"
+  }
+}

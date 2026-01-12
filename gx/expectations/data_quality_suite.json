@@ -1,0 +1,40 @@
+{
+  "expectations": [
+    {
+      "id": "681647fa-356a-4322-a45c-fd38f2ef0c32",
+      "kwargs": {
+        "column": "full_title"
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_not_be_null"
+    },
+    {
+      "id": "952f5ae5-fab1-4cd2-8bcc-10d9a4c711c5",
+      "kwargs": {
+        "column": "price",
+        "max_value": 50000.0,
+        "min_value": 100.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    },
+    {
+      "id": "930d915b-357e-4b1b-9e13-fac738f4d070",
+      "kwargs": {
+        "column": "rating",
+        "min_value": 0.0
+      },
+      "meta": {},
+      "severity": "critical",
+      "type": "expect_column_values_to_be_between"
+    }
+  ],
+  "id": "aa40f369-c71c-4ad6-a0d6-b0f8fa56aaa4",
+  "meta": {
+    "great_expectations_version": "1.10.0"
+  },
+  "name": "data_quality_suite",
+  "notes": null
+}

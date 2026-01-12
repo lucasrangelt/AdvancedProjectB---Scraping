@@ -1,4 +1,3 @@
-
 # Welcome to Great Expectations! Always know what to expect from your data.
 #
 # Here you can define datasources, batch kwargs generators, integrations and
@@ -9,7 +8,7 @@
 
 # config_version refers to the syntactic version of this config file, and is used in maintaining backwards compatibility
 # It is auto-generated and usually does not need to be changed.
-config_version: 4
+config_version: 4.0
 
 # This config file supports variable substitution which enables: 1) keeping
 # secrets out of source control & 2) environment-based configuration changes
@@ -75,10 +74,28 @@ data_docs_sites:
   # profiles from the uncommitted directory. Read more at https://docs.greatexpectations.io/docs/terms/data_docs
   local_site:
     class_name: SiteBuilder
-    # set to false to hide how-to buttons in Data Docs
     show_how_to_buttons: true
     store_backend:
-        class_name: TupleFilesystemStoreBackend
-        base_directory: uncommitted/data_docs/local_site/
+      class_name: TupleFilesystemStoreBackend
+      base_directory: uncommitted/data_docs/local_site/
     site_index_builder:
-        class_name: DefaultSiteIndexBuilder
+      class_name: DefaultSiteIndexBuilder
+fluent_datasources:
+  my_postgres_db:
+    type: postgres
+    id: fa1444bb-f1cb-48e2-abe1-a55b0113b510
+    assets:
+      gx_stg_data:
+        type: table
+        id: 1afff85e-6cc5-4a6e-acb8-049659f6e1d9
+        batch_metadata: {}
+        batch_definitions:
+          whole_table_batch:
+            id: befad94e-bd8b-480d-95e3-00aa562f269a
+            partitioner:
+        table_name: my_dbt_schema.stg_data
+        schema_name:
+    connection_string: 
+      postgresql+psycopg2://lucasrangel:scrapyword@db:5432/scrapy_data
+analytics_enabled:
+data_context_id: e6577267-3de5-4867-84f6-fc1321998563
