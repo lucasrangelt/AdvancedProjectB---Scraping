@@ -26,8 +26,6 @@
 
 -At the middle, somewhere, you might want to look at Java.
 
--Idempotency.
-
 -Use GitHub Actions for CI/CD.
 
 -At the end, ask the AI many questions about the project to make sure I understand it properly.
@@ -41,3 +39,7 @@ Potential Pitfalls:
 The biggest risk is "Tutorial Hell"—copying code without understanding the configuration. Because you are using dbt, you will need to learn some basic Jinja (Python-like templating) and YAML.
 
         Pro-Tip: Focus heavily on the dbt + Great Expectations part. This is where the "magic" happens in modern data stacks, and 	it’s the most hireable skill on your list right now.
+
+- on fucking airflow: create your dags and logs BEFORE setting it up, or else you'll have permission errors. also, make sure to account for some set-up structural changes that came with the 3.x version.
+
+- don't worry about bugs. you'll find a lot.
