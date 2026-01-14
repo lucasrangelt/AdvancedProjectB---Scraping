@@ -40,7 +40,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.airflow
-    command: version && airflow db migrate
+    command: bash -c "airflow version && airflow db migrate"
     depends_on:
       - airflow-db
     environment:
@@ -54,6 +54,8 @@ services:
     depends_on:
       airflow-db:
         condition: service_healthy
+      airflow-init:
+        condition: service_completed_successfully
     ports:
       - "8080:8080"
     volumes:

@@ -20,7 +20,7 @@ with DAG(
     #2: DBT Staging
     dbt_staging = BashOperator(
         task_id='run_dbt_part1',
-        bash_command=f'cd {project_path}/dbt_project && dbt run --select stg_data --profiles.dir .'
+        bash_command=f'cd {project_path}/dbt_project && dbt run --select stg_data --profiles-dir .'
     )
 
     #3: Great Expectations
