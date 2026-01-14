@@ -11,4 +11,6 @@ Dia 7: Organizei, testei e corrigi bugs no scraper.
 Dia 8: Planejei, editei, testei o scraper e instalei as bibliotecas de dbt e Great Expectations.
 Dia 9: Planejei, criei pastas para o dbt e utilizei dbt para organizar dados e implementar uma Star Schema.
 Dia 10: Implementei Great Expectations do começo ao fim.
-Dia 11: Corrigi bugs e erros no Great Expectations e preparei a infraestrutura do Airflow.
+Dia 11: Corrigi bugs e erros no Great Expectations.
+Dia 12: Comecei a preparar a infraestrutura do Airflow.
+Dia 13: Corrigi bugs e terminei de instalar a infraestrutura do Airflow e comecei a conectá-lo com as outras ferramentas.

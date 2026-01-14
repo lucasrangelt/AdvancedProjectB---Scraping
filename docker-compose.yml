@@ -40,20 +40,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.airflow
+    command: version && airflow db migrate
     depends_on:
       - airflow-db
     environment:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db/airflow
-    command:
-      - bash
-      - -c
-      - "airflow db migrate && airflow users create --username lucasrangel --firstname lucas --lastname rangel --role Admin --email lucas@myairflowmail.com --password airfloword"
   
   airflow-webserver:
     build:
       context: .
       dockerfile: Dockerfile.airflow
-    command: webserver
+    command: api-server
     depends_on:
       airflow-db:
         condition: service_healthy
