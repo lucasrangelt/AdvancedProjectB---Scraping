@@ -7,7 +7,7 @@ project_path = '/opt/airflow/project'
 with DAG(
     dag_id="scrapy_pipeline",
     start_date=datetime(2026, 1, 1),
-    schedule_interval='@daily',
+    schedule='@daily',
     catchup=False
 ) as dag:
     
