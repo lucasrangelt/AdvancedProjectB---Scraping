@@ -5,3 +5,4 @@ AI suggested I keep it simple, scraping a single site or even a single item. I p
 AI suggested to put the docker-compose.yml inside .devcontainers. Followed the prompt, but pulled it to root when preparing Airflow
 AI suggested hardcoded credentials. I corrected them, given the security risks.
 AI suggested Airflow 2.7.1. I chose Airflow 3.1.5.
+AI suggested wrong import paths. I had to check the official documentation to correct it.
