@@ -14,4 +14,4 @@ Dia 10: Implementei Great Expectations do começo ao fim.
 Dia 11: Corrigi bugs e erros no Great Expectations.
 Dia 12: Comecei a preparar a infraestrutura do Airflow.
 Dia 13: Corrigi bugs e terminei de instalar a infraestrutura do Airflow e comecei a conectá-lo com as outras ferramentas.
-Dia 14: Novo comando que me salvou: docker exec -it SCHEDULERID airflow dags reserialize. Airflow concluído.
+Dia 14: Novo comando que me salvou: docker exec -it SCHEDULERID airflow dags reserialize. Continuei tentando implementar o Airflow.
