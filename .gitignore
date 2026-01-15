@@ -9,3 +9,8 @@ env
 .pyd
 .vscode
 .idea
+
+checkboxes.xlsx
+Daily.txt
+questions.txt
+annotations.txt

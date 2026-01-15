@@ -9,3 +9,5 @@ AI suggested wrong import paths. I had to check the official documentation to co
 I decided to delete all my images and volumes and rebuild all containers from the bottom up to check if it still worked.
 
 Lição muito importante pra caralho: às vezes o DAG não aparece na UI do site e, além da probabilidade ser um erro de mapeação do volume (que no meu caso não foi), pode ser também um erro de sintaxe no código (qualquer erro significa que o arquivo será silenciosamente ignorado).
+
+Lição 2: Python Restart Language Server após importar os "requirements.txt"

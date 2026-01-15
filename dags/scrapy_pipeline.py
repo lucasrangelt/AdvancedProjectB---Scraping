@@ -14,7 +14,7 @@ with DAG(
     #1: Scrapy
     scrape_data = BashOperator(
         task_id='run_scrapy',
-        bash_command=f'cd {project_path} && scrapy crawl cute_mercado_livre_spider'
+        bash_command='pwd && ls -R && cd /opt/airflow/project/ecommerce_scraper && scrapy crawl cute_mercado_livre_spider'
     )
 
     #2: DBT Staging
