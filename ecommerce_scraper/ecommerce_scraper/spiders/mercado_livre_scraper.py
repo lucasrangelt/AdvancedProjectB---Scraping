@@ -19,11 +19,13 @@ class MercadoLivreSpider(scrapy.Spider):
             clean_title = clean_title.replace("  ", " ")
 
             price = i.css('span.andes-money-amount__fraction::text').get() or None
+            #DO THE FOLLOWING IN STG
             # if price is not None:
                 # clean_price = price.replace(".", "")
                 # clean_price = float(clean_price.replace(",", "."))
 
             rating = i.css('span.poly-phrase-label::text').get() or None
+            #DO THE FOLLOWING IN STG
             # if rating is not None:
             #     clean_rating = float(rating)
 

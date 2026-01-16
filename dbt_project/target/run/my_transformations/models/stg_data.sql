@@ -14,6 +14,10 @@
 
 SELECT
     CAST(id AS INTEGER) AS id,
+    CASE
+        WHEN full_title ILIKE '%notebook%' THEN 'notebook'
+        ELSE 'other'
+    END AS short_title,
     full_title,
     memory,
     storage,
