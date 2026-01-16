@@ -1,9 +1,11 @@
 import great_expectations as gx
 import sys
+import os
+from pathlib import Path
 
 def func():
-    project_path = "/opt/airflow/project"
-    context = gx.get_context(project_root_dir=project_path)
+    project_path = Path(__file__).parent.resolve()
+    context = gx.get_context(project_root_dir=str(project_path))
     try:
         checkpoint = context.checkpoints.get("gx_data_quality_checkpoint")
     except KeyError:
