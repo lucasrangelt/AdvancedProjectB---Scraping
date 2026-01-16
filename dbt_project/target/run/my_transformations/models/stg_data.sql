@@ -24,7 +24,10 @@ SELECT
     LOWER(color) AS color,
     CAST(REPLACE(REPLACE(price, '.', ''), ',', '.') AS NUMERIC(10, 2)) AS price,
     scraped_at,
-    CAST(rating AS NUMERIC(10, 2)) AS rating,
+    CASE
+        WHEN rating LIKE '%.%' THEN CAST(REGEXP_REPLACE(rating, '[^0-9.]', '', 'g') AS NUMERIC(10, 2))
+        ELSE NULL
+    END AS rating,
     site_name
 FROM
     data_to_stg
