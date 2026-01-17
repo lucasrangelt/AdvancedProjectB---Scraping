@@ -1,6 +1,6 @@
 name: GHA Data Quality Check
 
-runs-on:
+on:
   push:
     branches: [main]
   pull_request:
@@ -9,7 +9,7 @@ runs-on:
 jobs:
   test_and_lint:
     name: "Pipeline Verification (Scrapy, dbt, gx)"
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment: Production
     services:
       postgres:
