@@ -10,7 +10,8 @@ env
 .vscode
 .idea
 
-checkboxes.xlsx
 Daily.txt
 questions.txt
 annotations.txt
+
+dbt_project/profiles.yml

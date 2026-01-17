@@ -3,10 +3,10 @@ my_transformations:
     dev:
       type: postgres
       threads: 1
-      host: db
+      host: "db"
       port: 5432
-      user: lucasrangel
-      pass: scrapyword
-      dbname: scrapy_data
+      user: "lucasrangel"
+      password: "scrapyword"
+      dbname: "scrapy_data"
       schema: my_dbt_schema
   target: dev

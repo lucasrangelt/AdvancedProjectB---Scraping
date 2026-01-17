@@ -5,17 +5,20 @@
 
 
 # useful for handling different item types with a single interface
+import os
+import psycopg2
+from dotenv import load_dotenv
 from itemadapter import ItemAdapter
 
-import psycopg2
+load_dotenv()
 
 class PostgresPipeline:
     def open_spider(self, spider):
         self.connection = psycopg2.connect(
-            host="db",
-            user="lucasrangel",
-            password="scrapyword",
-            database="scrapy_data"
+            host=os.getenv("HOST"),
+            user=os.getenv("USER"),
+            password=os.getenv("PASSWORD"),
+            database=os.getenv("DATABASE")
         )
         self.cur = self.connection.cursor()
         self.cur.execute("""

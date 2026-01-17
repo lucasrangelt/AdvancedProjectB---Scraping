@@ -1,0 +1,75 @@
+name: GHA Data Quality Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test_and_lint:
+    name: "Pipeline Verification (Scrapy, dbt, gx)"
+    runs_on: ubuntu-latest
+    environment: Production
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: ${{secrets.PASSWORD}}
+          POSTGRES_DB: ${{secrets.DATABASE}}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Set up dbt profiles
+        run: |
+          # Create a temporary "profiles.yml" file to run dbt
+          cat <<EOF > dbt_project/profiles.yml
+          my_transformations:
+            outputs:
+              prod:
+                type: postgres
+                threads: 1
+                host: localhost
+                port: ${{secrets.PORT}}
+                user: ${{secrets.USER}}
+                password: ${{secrets.PASSWORD}}
+                dbname: ${{secrets.DATABASE}}
+                schema: my_dbt_schema
+            target: prod
+          EOF
+      
+      - name: Python linting (Check for syntax errors)
+        run: |
+          pip install flake8
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+      
+      - name: Scrapy dry run (Check if spider starts and runs)
+        run: |
+          cd ecommerce_scraper && scrapy list
+      
+      - name: Great Expectations test
+        run: |
+          python3 setup_gx.py
+      
+      - name: dbt test (Verify connection)
+        run: |
+          cd dbt_project && dbt debug --profiles-dir .
