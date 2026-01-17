@@ -68,7 +68,7 @@ jobs:
       
       - name: Great Expectations test
         run: |
-          python3 setup_gx.py
+          python3 run_validation.py
       
       - name: dbt test (Verify connection)
         run: |
