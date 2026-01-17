@@ -2,6 +2,16 @@
 
 import great_expectations as gx
 from great_expectations.exceptions import DataContextError
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+HOST = os.getenv("HOST")
+USER = os.getenv("USER")
+PASSWORD = os.getenv("PASSWORD")
+DATABASE = os.getenv("DATABASE")
+PORT = os.getenv("PORT")
 
 context = gx.get_context(project_root_dir="./")
 
@@ -12,7 +22,7 @@ try:
 except KeyError:
     datasource = context.data_sources.add_postgres(
         name = "my_postgres_db",
-        connection_string = "postgresql+psycopg2://lucasrangel:scrapyword@db:5432/scrapy_data"
+        connection_string = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
     )
     
 try:
@@ -36,14 +46,13 @@ suite.add_expectation(gx.expectations.ExpectColumnValuesToBeBetween(column="rati
 ##### checkpoints:
 
 checkpoint_name = "gx_data_quality_checkpoint"
-batch_definition = asset.add_batch_definition_whole_table("whole_table_batch")
 
 try:
     checkpoint = context.checkpoints.get(checkpoint_name)
 except DataContextError:
     vd = context.validation_definitions.add(gx.ValidationDefinition(
         name="my_validation",
-        data=batch_definition,
+        data=asset.add_batch_definition_whole_table("whole_table_batch"),
         suite=suite
     ))
 
