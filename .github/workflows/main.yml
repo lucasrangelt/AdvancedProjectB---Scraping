@@ -1,6 +1,6 @@
 name: GHA Data Quality Check
 
-on:
+runs_on:
   push:
     branches: [main]
   pull_request:
