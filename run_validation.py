@@ -2,6 +2,15 @@ import great_expectations as gx
 import sys
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
+
+ENV_HOST = os.getenv("ENV_HOST")
+ENV_USER = os.getenv("ENV_USER")
+ENV_PASSWORD = os.getenv("ENV_PASSWORD")
+ENV_DATABASE = os.getenv("ENV_DATABASE")
+ENV_PORT = os.getenv("ENV_PORT")
 
 def func():
     project_path = Path(__file__).parent.resolve()

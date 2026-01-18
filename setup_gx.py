@@ -7,11 +7,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-HOST = os.getenv("HOST")
-USER = os.getenv("USER")
-PASSWORD = os.getenv("PASSWORD")
-DATABASE = os.getenv("DATABASE")
-PORT = os.getenv("PORT")
+ENV_HOST = os.getenv("ENV_HOST")
+ENV_USER = os.getenv("ENV_USER")
+ENV_PASSWORD = os.getenv("ENV_PASSWORD")
+ENV_DATABASE = os.getenv("ENV_DATABASE")
+ENV_PORT = os.getenv("ENV_PORT")
 
 context = gx.get_context(project_root_dir="./")
 
@@ -22,7 +22,7 @@ try:
 except KeyError:
     datasource = context.data_sources.add_postgres(
         name = "my_postgres_db",
-        connection_string = f"postgresql+psycopg2://{USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
+        connection_string = "postgresql+psycopg2://${ENV_USER}:${ENV_PASSWORD}@${ENV_HOST}:${ENV_PORT}/${ENV_DATABASE}"
     )
     
 try:

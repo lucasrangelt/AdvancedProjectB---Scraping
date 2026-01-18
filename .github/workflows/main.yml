@@ -66,16 +66,16 @@ jobs:
         run: |
           cd ecommerce_scraper && scrapy list
       
-      - name: Great Expectations test
-        env:
-          USER: ${{ secrets.USER }}
-          HOST: ${{ secrets.HOST }}
-          PASSWORD: ${{ secrets.PASSWORD }}
-          DATABASE: ${{ secrets.DATABASE }}
-          PORT: ${{ secrets.PORT }}
-        run: |
-          python3 setup_gx.py && python3 run_validation.py
-      
       - name: dbt test (Verify connection)
         run: |
           cd dbt_project && dbt debug --profiles-dir .
+      
+      - name: Great Expectations test
+        env:
+          ENV_USER: ${{ secrets.USER }}
+          ENV_HOST: ${{ secrets.HOST }}
+          ENV_PASSWORD: ${{ secrets.PASSWORD }}
+          ENV_DATABASE: ${{ secrets.DATABASE }}
+          ENV_PORT: ${{ secrets.PORT }}
+        run: |
+          python3 setup_gx.py && python3 run_validation.py

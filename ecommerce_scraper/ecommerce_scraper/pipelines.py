@@ -15,10 +15,10 @@ load_dotenv()
 class PostgresPipeline:
     def open_spider(self, spider):
         self.connection = psycopg2.connect(
-            host=os.getenv("HOST"),
-            user=os.getenv("USER"),
-            password=os.getenv("PASSWORD"),
-            database=os.getenv("DATABASE")
+            host=os.getenv("ENV_HOST"),
+            user=os.getenv("ENV_USER"),
+            password=os.getenv("ENV_PASSWORD"),
+            database=os.getenv("ENV_DATABASE")
         )
         self.cur = self.connection.cursor()
         self.cur.execute("""
