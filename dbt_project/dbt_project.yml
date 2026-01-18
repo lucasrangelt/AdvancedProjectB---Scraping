@@ -21,7 +21,7 @@ seeds:
       memory: text
       storage: text
       color: text
-      price: numeric
-      rating: numeric
+      price: text
+      rating: text
       site_name: text
       scraped_at: timestamp
