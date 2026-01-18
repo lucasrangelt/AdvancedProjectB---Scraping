@@ -12,3 +12,16 @@ analysis-paths: ["analyses"]
 models:
   my_transformations:
     materialized: table
+
+seeds:
+  my_transformations:
+    +column_types:
+      id: numeric
+      full_title: text
+      memory: text
+      storage: text
+      color: text
+      price: numeric
+      rating: numeric
+      site_name: text
+      scraped_at: timestamp

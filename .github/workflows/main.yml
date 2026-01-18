@@ -70,6 +70,10 @@ jobs:
       - name: dbt test (Verify connection)
         run: |
           cd dbt_project && dbt debug --profiles-dir .
+
+      - name: dbt prepare seed
+        run: |
+          cd fbt_project && dbt seed --target prod --profiles-dir .
       
       - name: Great Expectations test
         env:

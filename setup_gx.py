@@ -22,7 +22,7 @@ try:
 except KeyError:
     datasource = context.data_sources.add_postgres(
         name = "my_postgres_db",
-        connection_string = "postgresql+psycopg2://${ENV_USER}:${ENV_PASSWORD}@${ENV_HOST}:${ENV_PORT}/${ENV_DATABASE}"
+        connection_string = f"postgresql+psycopg2://{ENV_USER}:{ENV_PASSWORD}@{ENV_HOST}:{ENV_PORT}/{ENV_DATABASE}"
     )
     
 try:

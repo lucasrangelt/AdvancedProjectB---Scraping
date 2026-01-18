@@ -1,5 +1,9 @@
 WITH data_to_stg AS (
-    SELECT * FROM {{source('my_source', 'raw_data')}}
+    {% IF target.name == 'prod' %}
+        SELECT * FROM {{ref('example_data_placeholder_seed')}}
+    {% ELSE %}
+        SELECT * FROM {{source('my_source', 'raw_data')}}
+    {% ENDIF %}
 )
 
 SELECT
