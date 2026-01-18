@@ -67,14 +67,12 @@ jobs:
         run: |
           cd ecommerce_scraper && scrapy list
       
-      - name: dbt test (Verify connection)
+      - name: dbt seed and run
         run: |
-          cd dbt_project && dbt debug --profiles-dir .
+          cd dbt_project
+          dbt seed --target prod --profiles-dir .
+          dbt run --select stg_data --target prod --profiles-dir .
 
-      - name: dbt prepare seed
-        run: |
-          cd dbt_project && dbt seed --target prod --profiles-dir .
-      
       - name: Great Expectations test
         env:
           ENV_USER: ${{ secrets.USER }}
