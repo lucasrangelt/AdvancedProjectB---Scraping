@@ -79,7 +79,7 @@ jobs:
       - name: dbt seed and run
         run: |
           cd dbt_project
-          dbt seed --target prod --profiles-dir .
+          dbt seed --target ci --profiles-dir .
           dbt run --select stg_data --target ci --profiles-dir .
 
       - name: Great Expectations test
