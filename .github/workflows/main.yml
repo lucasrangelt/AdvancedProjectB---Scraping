@@ -29,7 +29,16 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+    
+      # - name: Azure Login
+      #   uses: azure/login@v1
+      #   with:
+      #     creds: {{ secrets.AZURE_CREDENTIALS }}
+        
+      # - name: Build and Push Docker Image
+      #   run: |
+          
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -46,7 +55,7 @@ jobs:
           cat <<EOF > dbt_project/profiles.yml
           my_transformations:
             outputs:
-              prod:
+              ci:
                 type: postgres
                 threads: 1
                 host: localhost
@@ -55,7 +64,7 @@ jobs:
                 password: ${{ secrets.PASSWORD }}
                 dbname: ${{ secrets.DATABASE }}
                 schema: my_dbt_schema
-            target: prod
+            target: ci
           EOF
       
       - name: Python linting (Check for syntax errors)
@@ -71,7 +80,7 @@ jobs:
         run: |
           cd dbt_project
           dbt seed --target prod --profiles-dir .
-          dbt run --select stg_data --target prod --profiles-dir .
+          dbt run --select stg_data --target ci --profiles-dir .
 
       - name: Great Expectations test
         env:

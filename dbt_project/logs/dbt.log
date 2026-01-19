@@ -4368,3 +4368,446 @@ drop table if exists "scrapy_data"."my_dbt_schema"."fact_listings__dbt_backup" c
 [0m00:33:27.218121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7447b847dee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7447b733a9f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7447b9298d40>]}
 [0m00:33:27.218561 [debug] [MainThread]: Flushing usage events
 [0m00:33:27.851218 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:00:16.047933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5a557dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5a557d40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5bfbf140>]}
+
+
+============================== 00:00:16.053785 | 29c2dd4f-1e97-4f03-810c-e2a65ee7245f ==============================
+[0m00:00:16.053785 [info ] [MainThread]: Running with dbt=1.11.2
+[0m00:00:16.054398 [debug] [MainThread]: running dbt with arguments {'quiet': 'False', 'partial_parse': 'True', 'empty': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'version_check': 'True', 'static_parser': 'True', 'no_print': 'None', 'use_experimental_parser': 'False', 'warn_error': 'None', 'log_format': 'default', 'log_path': '/opt/airflow/project/dbt_project/logs', 'printer_width': '80', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --select stg_data --profiles-dir .', 'introspect': 'True', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '.', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_cache_events': 'False', 'target_path': 'None', 'debug': 'False', 'fail_fast': 'False'}
+[0m00:00:16.373426 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b59c7cd70>]}
+[0m00:00:16.440364 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5a447260>]}
+[0m00:00:16.451473 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:00:16.578829 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m00:00:16.684785 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m00:00:16.685405 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5a5320f0>]}
+[0m00:00:18.191106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b56b28b30>]}
+[0m00:00:18.281606 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/project/dbt_project/target/manifest.json
+[0m00:00:18.284401 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/project/dbt_project/target/semantic_manifest.json
+[0m00:00:18.345849 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b56a12690>]}
+[0m00:00:18.346492 [info ] [MainThread]: Found 3 models, 1 seed, 5 data tests, 1 source, 464 macros
+[0m00:00:18.346913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b56c2c740>]}
+[0m00:00:18.348551 [info ] [MainThread]: 
+[0m00:00:18.348987 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m00:00:18.349378 [info ] [MainThread]: 
+[0m00:00:18.349981 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m00:00:18.351075 [debug] [ThreadPool]: Acquiring new postgres connection 'list_scrapy_data'
+[0m00:00:18.399647 [debug] [ThreadPool]: Using postgres connection "list_scrapy_data"
+[0m00:00:18.400148 [debug] [ThreadPool]: On list_scrapy_data: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "connection_name": "list_scrapy_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:00:18.400548 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:18.419409 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.019 seconds
+[0m00:00:18.421248 [debug] [ThreadPool]: On list_scrapy_data: Close
+[0m00:00:18.426212 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_scrapy_data, now list_scrapy_data_my_dbt_schema)
+[0m00:00:18.432482 [debug] [ThreadPool]: Using postgres connection "list_scrapy_data_my_dbt_schema"
+[0m00:00:18.432935 [debug] [ThreadPool]: On list_scrapy_data_my_dbt_schema: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "connection_name": "list_scrapy_data_my_dbt_schema"} */
+select
+      'scrapy_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'my_dbt_schema'
+    union all
+    select
+      'scrapy_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'my_dbt_schema'
+    union all
+    select
+      'scrapy_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'my_dbt_schema'
+  
+[0m00:00:18.433288 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:00:18.452832 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.019 seconds
+[0m00:00:18.454471 [debug] [ThreadPool]: On list_scrapy_data_my_dbt_schema: ROLLBACK
+[0m00:00:18.455037 [debug] [ThreadPool]: On list_scrapy_data_my_dbt_schema: Close
+[0m00:00:18.460086 [debug] [MainThread]: Using postgres connection "master"
+[0m00:00:18.460594 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m00:00:18.460998 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:00:18.478318 [debug] [MainThread]: SQL status: SELECT 0 in 0.017 seconds
+[0m00:00:18.479632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b56b7c200>]}
+[0m00:00:18.480157 [debug] [MainThread]: On master: ROLLBACK
+[0m00:00:18.480652 [debug] [MainThread]: On master: COMMIT
+[0m00:00:18.481011 [debug] [MainThread]: Using postgres connection "master"
+[0m00:00:18.481345 [debug] [MainThread]: On master: COMMIT
+[0m00:00:18.481985 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m00:00:18.482403 [debug] [MainThread]: On master: Close
+[0m00:00:18.487115 [debug] [Thread-1 (]: Began running node model.my_transformations.stg_data
+[0m00:00:18.487747 [info ] [Thread-1 (]: 1 of 1 START sql table model my_dbt_schema.stg_data ............................ [RUN]
+[0m00:00:18.488311 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_scrapy_data_my_dbt_schema, now model.my_transformations.stg_data)
+[0m00:00:18.488782 [debug] [Thread-1 (]: Began compiling node model.my_transformations.stg_data
+[0m00:00:18.496899 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_transformations.stg_data"
+[0m00:00:18.497655 [debug] [Thread-1 (]: Began executing node model.my_transformations.stg_data
+[0m00:00:18.535757 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_transformations.stg_data"
+[0m00:00:18.536996 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.stg_data"
+[0m00:00:18.537584 [debug] [Thread-1 (]: On model.my_transformations.stg_data: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.stg_data"} */
+
+  
+    
+
+  create  table "scrapy_data"."my_dbt_schema"."stg_data__dbt_tmp"
+  
+  
+    as
+  
+  (
+    WITH data_to_stg AS (
+    
+        SELECT * FROM "scrapy_data"."public"."raw_data"
+    
+)
+
+SELECT
+    CAST(id AS INTEGER) AS id,
+    CASE
+        WHEN full_title ILIKE '%notebook%' THEN 'notebook'
+        ELSE 'other'
+    END AS short_title,
+    full_title,
+    memory,
+    storage,
+    LOWER(color) AS color,
+    CAST(REPLACE(REPLACE(price, '.', ''), ',', '.') AS NUMERIC(10, 2)) AS price,
+    scraped_at,
+    CASE
+        WHEN rating LIKE '%.%' THEN CAST(REGEXP_REPLACE(rating, '[^0-9.]', '', 'g') AS NUMERIC(10, 2))
+        ELSE NULL
+    END AS rating,
+    site_name
+FROM
+    data_to_stg
+  );
+  
+[0m00:00:18.538005 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:00:18.570273 [debug] [Thread-1 (]: SQL status: SELECT 504 in 0.032 seconds
+[0m00:00:18.580333 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.stg_data"
+[0m00:00:18.580818 [debug] [Thread-1 (]: On model.my_transformations.stg_data: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.stg_data"} */
+alter table "scrapy_data"."my_dbt_schema"."stg_data" rename to "stg_data__dbt_backup"
+[0m00:00:18.582620 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m00:00:18.585589 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.stg_data"
+[0m00:00:18.585990 [debug] [Thread-1 (]: On model.my_transformations.stg_data: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.stg_data"} */
+alter table "scrapy_data"."my_dbt_schema"."stg_data__dbt_tmp" rename to "stg_data"
+[0m00:00:18.586783 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:18.602138 [debug] [Thread-1 (]: On model.my_transformations.stg_data: COMMIT
+[0m00:00:18.602569 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.stg_data"
+[0m00:00:18.602951 [debug] [Thread-1 (]: On model.my_transformations.stg_data: COMMIT
+[0m00:00:18.605170 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m00:00:18.611086 [debug] [Thread-1 (]: Applying DROP to: "scrapy_data"."my_dbt_schema"."stg_data__dbt_backup"
+[0m00:00:18.616825 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.stg_data"
+[0m00:00:18.617235 [debug] [Thread-1 (]: On model.my_transformations.stg_data: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.stg_data"} */
+drop table if exists "scrapy_data"."my_dbt_schema"."stg_data__dbt_backup" cascade
+[0m00:00:18.630921 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.013 seconds
+[0m00:00:18.633747 [debug] [Thread-1 (]: On model.my_transformations.stg_data: Close
+[0m00:00:18.636067 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '29c2dd4f-1e97-4f03-810c-e2a65ee7245f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5ac12270>]}
+[0m00:00:18.637207 [info ] [Thread-1 (]: 1 of 1 OK created sql table model my_dbt_schema.stg_data ....................... [[32mSELECT 504[0m in 0.15s]
+[0m00:00:18.637899 [debug] [Thread-1 (]: Finished running node model.my_transformations.stg_data
+[0m00:00:18.639548 [debug] [MainThread]: On master: COMMIT
+[0m00:00:18.639931 [debug] [MainThread]: Using postgres connection "master"
+[0m00:00:18.640333 [debug] [MainThread]: On master: COMMIT
+[0m00:00:18.640672 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:00:18.648677 [debug] [MainThread]: SQL status: COMMIT in 0.008 seconds
+[0m00:00:18.649233 [debug] [MainThread]: On master: Close
+[0m00:00:18.649779 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:00:18.650105 [debug] [MainThread]: Connection 'model.my_transformations.stg_data' was properly closed.
+[0m00:00:18.650505 [info ] [MainThread]: 
+[0m00:00:18.650927 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[0m00:00:18.651609 [debug] [MainThread]: Command end result
+[0m00:00:18.673856 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/project/dbt_project/target/manifest.json
+[0m00:00:18.675761 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/project/dbt_project/target/semantic_manifest.json
+[0m00:00:18.681224 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/project/dbt_project/target/run_results.json
+[0m00:00:18.681580 [info ] [MainThread]: 
+[0m00:00:18.682060 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:00:18.682422 [info ] [MainThread]: 
+[0m00:00:18.682803 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m00:00:18.683926 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.6975703, "process_in_blocks": "45896", "process_kernel_time": 0.78623, "process_mem_max_rss": "136760", "process_out_blocks": "4112", "process_user_time": 3.451745}
+[0m00:00:18.684474 [debug] [MainThread]: Command `dbt run` succeeded at 00:00:18.684325 after 2.70 seconds
+[0m00:00:18.684894 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5a783140>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5ac42ea0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x722b5ac40080>]}
+[0m00:00:18.685297 [debug] [MainThread]: Flushing usage events
+[0m00:00:19.371619 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m00:00:38.312511 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65ab21670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65b646c30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65ae420c0>]}
+
+
+============================== 00:00:38.327891 | 80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c ==============================
+[0m00:00:38.327891 [info ] [MainThread]: Running with dbt=1.11.2
+[0m00:00:38.328643 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'write_json': 'True', 'send_anonymous_usage_stats': 'True', 'cache_selected_only': 'False', 'debug': 'False', 'version_check': 'True', 'indirect_selection': 'eager', 'printer_width': '80', 'profiles_dir': '.', 'log_cache_events': 'False', 'no_print': 'None', 'log_format': 'default', 'partial_parse': 'True', 'use_colors': 'True', 'target_path': 'None', 'empty': 'False', 'quiet': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'static_parser': 'True', 'fail_fast': 'False', 'log_path': '/opt/airflow/project/dbt_project/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'invocation_command': 'dbt run --select dim_products fact_listings --profiles-dir .'}
+[0m00:00:38.534078 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65b72ec60>]}
+[0m00:00:38.602470 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65b646ab0>]}
+[0m00:00:38.606205 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m00:00:38.733503 [debug] [MainThread]: checksum: 3d40d8bbe1bef07db1c24822f2dbfff8bc07f2a48ed4fe2658a40653aec0b54b, vars: {}, profile: , target: , version: 1.11.2
+[0m00:00:38.895856 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m00:00:38.896417 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m00:00:38.896762 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m00:00:38.954074 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a6599b2660>]}
+[0m00:00:39.046112 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/project/dbt_project/target/manifest.json
+[0m00:00:39.048277 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/project/dbt_project/target/semantic_manifest.json
+[0m00:00:39.078557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a658defd40>]}
+[0m00:00:39.079232 [info ] [MainThread]: Found 3 models, 1 seed, 5 data tests, 1 source, 464 macros
+[0m00:00:39.079684 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a6595d8cb0>]}
+[0m00:00:39.081438 [info ] [MainThread]: 
+[0m00:00:39.081877 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m00:00:39.082274 [info ] [MainThread]: 
+[0m00:00:39.082872 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m00:00:39.086686 [debug] [ThreadPool]: Acquiring new postgres connection 'list_scrapy_data'
+[0m00:00:39.132644 [debug] [ThreadPool]: Using postgres connection "list_scrapy_data"
+[0m00:00:39.133216 [debug] [ThreadPool]: On list_scrapy_data: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "connection_name": "list_scrapy_data"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m00:00:39.133661 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m00:00:39.144163 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.010 seconds
+[0m00:00:39.145647 [debug] [ThreadPool]: On list_scrapy_data: Close
+[0m00:00:39.147627 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_scrapy_data, now list_scrapy_data_my_dbt_schema)
+[0m00:00:39.153779 [debug] [ThreadPool]: Using postgres connection "list_scrapy_data_my_dbt_schema"
+[0m00:00:39.154196 [debug] [ThreadPool]: On list_scrapy_data_my_dbt_schema: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "connection_name": "list_scrapy_data_my_dbt_schema"} */
+select
+      'scrapy_data' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'my_dbt_schema'
+    union all
+    select
+      'scrapy_data' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'my_dbt_schema'
+    union all
+    select
+      'scrapy_data' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'my_dbt_schema'
+  
+[0m00:00:39.154554 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m00:00:39.164668 [debug] [ThreadPool]: SQL status: SELECT 3 in 0.010 seconds
+[0m00:00:39.166131 [debug] [ThreadPool]: On list_scrapy_data_my_dbt_schema: ROLLBACK
+[0m00:00:39.166718 [debug] [ThreadPool]: On list_scrapy_data_my_dbt_schema: Close
+[0m00:00:39.171684 [debug] [MainThread]: Using postgres connection "master"
+[0m00:00:39.172265 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m00:00:39.172676 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m00:00:39.183040 [debug] [MainThread]: SQL status: SELECT 0 in 0.010 seconds
+[0m00:00:39.184706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65892fbf0>]}
+[0m00:00:39.185259 [debug] [MainThread]: On master: ROLLBACK
+[0m00:00:39.185770 [debug] [MainThread]: On master: COMMIT
+[0m00:00:39.186151 [debug] [MainThread]: Using postgres connection "master"
+[0m00:00:39.186473 [debug] [MainThread]: On master: COMMIT
+[0m00:00:39.187242 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m00:00:39.187628 [debug] [MainThread]: On master: Close
+[0m00:00:39.200985 [debug] [Thread-1 (]: Began running node model.my_transformations.dim_products
+[0m00:00:39.201635 [info ] [Thread-1 (]: 1 of 2 START sql table model my_dbt_schema.dim_products ........................ [RUN]
+[0m00:00:39.202201 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_scrapy_data_my_dbt_schema, now model.my_transformations.dim_products)
+[0m00:00:39.202659 [debug] [Thread-1 (]: Began compiling node model.my_transformations.dim_products
+[0m00:00:39.212840 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_transformations.dim_products"
+[0m00:00:39.213848 [debug] [Thread-1 (]: Began executing node model.my_transformations.dim_products
+[0m00:00:39.251281 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_transformations.dim_products"
+[0m00:00:39.252344 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.dim_products"
+[0m00:00:39.252817 [debug] [Thread-1 (]: On model.my_transformations.dim_products: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.dim_products"} */
+
+  
+    
+
+  create  table "scrapy_data"."my_dbt_schema"."dim_products__dbt_tmp"
+  
+  
+    as
+  
+  (
+    WITH products_to_dim as (
+    SELECT DISTINCT
+        MD5(TRIM(LOWER(full_title)) || memory || storage || color) as product_key,
+        full_title,
+        storage,
+        memory,
+        color
+    FROM
+        "scrapy_data"."my_dbt_schema"."stg_data"
+)
+
+SELECT
+    product_key,
+    full_title,
+    storage,
+    memory,
+    color
+FROM
+    products_to_dim
+  );
+  
+[0m00:00:39.253224 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:00:39.269144 [debug] [Thread-1 (]: SQL status: SELECT 96 in 0.016 seconds
+[0m00:00:39.279398 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.dim_products"
+[0m00:00:39.279848 [debug] [Thread-1 (]: On model.my_transformations.dim_products: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.dim_products"} */
+alter table "scrapy_data"."my_dbt_schema"."dim_products" rename to "dim_products__dbt_backup"
+[0m00:00:39.280924 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m00:00:39.284216 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.dim_products"
+[0m00:00:39.284666 [debug] [Thread-1 (]: On model.my_transformations.dim_products: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.dim_products"} */
+alter table "scrapy_data"."my_dbt_schema"."dim_products__dbt_tmp" rename to "dim_products"
+[0m00:00:39.285398 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:39.301097 [debug] [Thread-1 (]: On model.my_transformations.dim_products: COMMIT
+[0m00:00:39.301529 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.dim_products"
+[0m00:00:39.301928 [debug] [Thread-1 (]: On model.my_transformations.dim_products: COMMIT
+[0m00:00:39.303884 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m00:00:39.309833 [debug] [Thread-1 (]: Applying DROP to: "scrapy_data"."my_dbt_schema"."dim_products__dbt_backup"
+[0m00:00:39.315683 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.dim_products"
+[0m00:00:39.316128 [debug] [Thread-1 (]: On model.my_transformations.dim_products: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.dim_products"} */
+drop table if exists "scrapy_data"."my_dbt_schema"."dim_products__dbt_backup" cascade
+[0m00:00:39.320518 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.004 seconds
+[0m00:00:39.323015 [debug] [Thread-1 (]: On model.my_transformations.dim_products: Close
+[0m00:00:39.325160 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a6578799d0>]}
+[0m00:00:39.325888 [info ] [Thread-1 (]: 1 of 2 OK created sql table model my_dbt_schema.dim_products ................... [[32mSELECT 96[0m in 0.12s]
+[0m00:00:39.326562 [debug] [Thread-1 (]: Finished running node model.my_transformations.dim_products
+[0m00:00:39.327062 [debug] [Thread-1 (]: Began running node model.my_transformations.fact_listings
+[0m00:00:39.327849 [info ] [Thread-1 (]: 2 of 2 START sql table model my_dbt_schema.fact_listings ....................... [RUN]
+[0m00:00:39.328409 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.my_transformations.dim_products, now model.my_transformations.fact_listings)
+[0m00:00:39.328822 [debug] [Thread-1 (]: Began compiling node model.my_transformations.fact_listings
+[0m00:00:39.331663 [debug] [Thread-1 (]: Writing injected SQL for node "model.my_transformations.fact_listings"
+[0m00:00:39.332386 [debug] [Thread-1 (]: Began executing node model.my_transformations.fact_listings
+[0m00:00:39.335937 [debug] [Thread-1 (]: Writing runtime sql for node "model.my_transformations.fact_listings"
+[0m00:00:39.336756 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.fact_listings"
+[0m00:00:39.337162 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.fact_listings"} */
+
+  
+    
+
+  create  table "scrapy_data"."my_dbt_schema"."fact_listings__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT
+    MD5(TRIM(LOWER(full_title)) || memory || storage || color) as product_key,
+    price,
+    rating,
+    scraped_at,
+    site_name
+FROM
+    "scrapy_data"."my_dbt_schema"."stg_data"
+  );
+  
+[0m00:00:39.337550 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m00:00:39.351106 [debug] [Thread-1 (]: SQL status: SELECT 504 in 0.013 seconds
+[0m00:00:39.354962 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.fact_listings"
+[0m00:00:39.355413 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.fact_listings"} */
+alter table "scrapy_data"."my_dbt_schema"."fact_listings" rename to "fact_listings__dbt_backup"
+[0m00:00:39.356305 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:39.359096 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.fact_listings"
+[0m00:00:39.359626 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.fact_listings"} */
+alter table "scrapy_data"."my_dbt_schema"."fact_listings__dbt_tmp" rename to "fact_listings"
+[0m00:00:39.360282 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m00:00:39.361842 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: COMMIT
+[0m00:00:39.362274 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.fact_listings"
+[0m00:00:39.362692 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: COMMIT
+[0m00:00:39.364338 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m00:00:39.367989 [debug] [Thread-1 (]: Applying DROP to: "scrapy_data"."my_dbt_schema"."fact_listings__dbt_backup"
+[0m00:00:39.368801 [debug] [Thread-1 (]: Using postgres connection "model.my_transformations.fact_listings"
+[0m00:00:39.369340 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: /* {"app": "dbt", "dbt_version": "1.11.2", "profile_name": "my_transformations", "target_name": "dev", "node_id": "model.my_transformations.fact_listings"} */
+drop table if exists "scrapy_data"."my_dbt_schema"."fact_listings__dbt_backup" cascade
+[0m00:00:39.371737 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.002 seconds
+[0m00:00:39.373040 [debug] [Thread-1 (]: On model.my_transformations.fact_listings: Close
+[0m00:00:39.373748 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '80f0c79b-5a02-4bf6-bfa9-9c387d1cbb2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a657790620>]}
+[0m00:00:39.374395 [info ] [Thread-1 (]: 2 of 2 OK created sql table model my_dbt_schema.fact_listings .................. [[32mSELECT 504[0m in 0.05s]
+[0m00:00:39.375040 [debug] [Thread-1 (]: Finished running node model.my_transformations.fact_listings
+[0m00:00:39.377053 [debug] [MainThread]: On master: COMMIT
+[0m00:00:39.377428 [debug] [MainThread]: Using postgres connection "master"
+[0m00:00:39.377760 [debug] [MainThread]: On master: COMMIT
+[0m00:00:39.378085 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m00:00:39.385366 [debug] [MainThread]: SQL status: COMMIT in 0.007 seconds
+[0m00:00:39.385995 [debug] [MainThread]: On master: Close
+[0m00:00:39.386584 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m00:00:39.386911 [debug] [MainThread]: Connection 'model.my_transformations.fact_listings' was properly closed.
+[0m00:00:39.387323 [info ] [MainThread]: 
+[0m00:00:39.387741 [info ] [MainThread]: Finished running 2 table models in 0 hours 0 minutes and 0.30 seconds (0.30s).
+[0m00:00:39.388633 [debug] [MainThread]: Command end result
+[0m00:00:39.408963 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/project/dbt_project/target/manifest.json
+[0m00:00:39.410789 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/project/dbt_project/target/semantic_manifest.json
+[0m00:00:39.416591 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/project/dbt_project/target/run_results.json
+[0m00:00:39.416956 [info ] [MainThread]: 
+[0m00:00:39.417414 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m00:00:39.417834 [info ] [MainThread]: 
+[0m00:00:39.418252 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=2
+[0m00:00:39.419496 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.1665698, "process_in_blocks": "31072", "process_kernel_time": 0.408408, "process_mem_max_rss": "127488", "process_out_blocks": "1952", "process_user_time": 2.324492}
+[0m00:00:39.420000 [debug] [MainThread]: Command `dbt run` succeeded at 00:00:39.419895 after 1.17 seconds
+[0m00:00:39.420418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65b7b2c00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65b7b25a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x70a65c832630>]}
+[0m00:00:39.420834 [debug] [MainThread]: Flushing usage events
+[0m00:00:40.133326 [debug] [MainThread]: An error was encountered while trying to flush usage events

@@ -1,5 +1,7 @@
 WITH data_to_stg AS (
-    SELECT * FROM "scrapy_data"."public"."raw_data"
+    
+        SELECT * FROM "scrapy_data"."public"."raw_data"
+    
 )
 
 SELECT

@@ -1,5 +1,5 @@
 WITH data_to_stg AS (
-    {% if target.name == 'prod' %}
+    {% if target.name == 'ci' %}
         SELECT * FROM {{ref('example_data_placeholder_seed')}}
     {% else %}
         SELECT * FROM {{source('my_source', 'raw_data')}}
