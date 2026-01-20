@@ -33,16 +33,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-    
-      # - name: Azure Login
-      #   uses: azure/login@v1
-      #   with:
-      #     creds: {{ secrets.AZURE_CREDENTIALS }}
-        
-      # - name: Build and Push Docker Image
-      #   run: |
           
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
@@ -116,7 +107,7 @@ jobs:
       
       - name: Build and push Docker image
         env:
-          ECR_REGISTRY: {{ steps.login-ecr.outputs.registry }}
+          ECR_REGISTRY: "${{ steps.login-ecr.outputs.registry }}"
           ECR_REPOSITORY: ecommerce-scraper-aws-repo
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
