@@ -97,7 +97,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::029465353569:role/github-scraper-oidc-role
+          role-to-assume: arn:aws:iam::029465353569:role/gha-oidc-role-scraper
           aws-region: sa-east-1
           role-session-name: GitHubActionsSession
         
