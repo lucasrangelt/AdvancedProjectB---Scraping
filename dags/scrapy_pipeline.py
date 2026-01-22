@@ -1,8 +1,15 @@
 from airflow import DAG
 from airflow.providers.standard.operators.bash import BashOperator
+from airflow.providers.amazon.aws.operators.ecs import EcsRunTaskOperator
 from datetime import datetime
 
 project_path = '/opt/airflow/project'
+
+CLUSTER_NAME = "default"
+TASK_DEFINITION = "default-ecommerce-scraper-aws-repo-02fe:1"
+SUBNETS = ["subnet-0f4aafd135a236f88"]
+SECURITY_GROUPS = ["sg-0cfb5511c9fcd96f9"]
+
 
 with DAG(
     dag_id="scrapy_pipeline",
@@ -11,13 +18,60 @@ with DAG(
     catchup=False
 ) as dag:
     
-    #1: Scrapy
-    scrape_data = BashOperator(
-        task_id='run_scrapy',
-        cwd='/opt/airflow/project/ecommerce_scraper',
-        # We explicitly export the path in the command itself
-        bash_command='export PYTHONPATH=$PYTHONPATH:/opt/airflow/project/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
+    run_cloud_scrape = EcsRunTaskOperator(
+        task_id="run_scrapy_on_fargate",
+        cluster=CLUSTER_NAME,
+        task_definition=TASK_DEFINITION,
+        launch_type="FARGATE",
+        overrides={
+            "containerOverrides": [
+                {
+                    "name": "Main",
+                    "command": ["scrapy", "crawl", "cute_mercado_livre_spider"],
+                    "secrets": [
+                        {
+                            "name": "ENV_HOST",
+                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_HOST::",
+                        },
+                        {
+                            "name": "ENV_USER",
+                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_USER::",
+                        },
+                        {
+                            "name": "ENV_PASSWORD",
+                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_PASSWORD::",
+                        },
+                        {
+                            "name": "ENV_DATABASE",
+                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_DATABASE::",
+                        },
+                        {
+                            "name": "ENV_PORT",
+                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_PORT::",
+                        },
+                    ],
+                },
+            ],
+        },
+        network_configuration={
+            "awsvpcConfiguration": {
+                "subnets": SUBNETS,
+                "securityGroups": SECURITY_GROUPS,
+                "assignPublicIp": "ENABLED",
+            },
+        },
+        aws_conn_id="aws_default",
+        region_name="sa-east-1"
     )
+
+    run_cloud_scrape
+
+
+    # #1: Scrapy
+    # scrape_data = BashOperator(
+    #     task_id='run_scrapy',
+    #     bash_command='cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
+    # )
 
     #2: DBT Staging
     dbt_staging = BashOperator(
@@ -37,4 +91,4 @@ with DAG(
         bash_command=f'cd {project_path}/dbt_project && dbt run --select dim_products fact_listings --profiles-dir .'
     )
 
-    scrape_data >> dbt_staging >> gx_validate >> dbt_marts
+    run_cloud_scrape >> dbt_staging >> gx_validate >> dbt_marts

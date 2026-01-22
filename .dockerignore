@@ -2,6 +2,8 @@
 .gitignore
 .venv
 venv
+.env.local
+.env.cloud
 .env
 env
 /__pycache__
@@ -10,3 +12,5 @@ env
 .pyd
 .vscode
 .idea
+
+dbt_project/profiles.yml

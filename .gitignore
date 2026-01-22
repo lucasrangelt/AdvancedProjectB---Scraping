@@ -1,6 +1,8 @@
 .git
 .venv
 venv
+.env.local
+.env.cloud
 .env
 env
 /__pycache__
@@ -9,9 +11,5 @@ env
 .pyd
 .vscode
 .idea
-
-Daily.txt
-questions.txt
-annotations.txt
 
 dbt_project/profiles.yml
