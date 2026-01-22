@@ -28,28 +28,6 @@ with DAG(
                 {
                     "name": "Main",
                     "command": ["scrapy", "crawl", "cute_mercado_livre_spider"],
-                    "secrets": [
-                        {
-                            "name": "ENV_HOST",
-                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_HOST::",
-                        },
-                        {
-                            "name": "ENV_USER",
-                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_USER::",
-                        },
-                        {
-                            "name": "ENV_PASSWORD",
-                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_PASSWORD::",
-                        },
-                        {
-                            "name": "ENV_DATABASE",
-                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_DATABASE::",
-                        },
-                        {
-                            "name": "ENV_PORT",
-                            "valueFrom": "arn:aws:secretsmanager:sa-east-1:029465353569:secret:aws_secrets_ecommerce_scraper-DqFB2c:ENV_PORT::",
-                        },
-                    ],
                 },
             ],
         },
@@ -63,9 +41,6 @@ with DAG(
         aws_conn_id="aws_default",
         region_name="sa-east-1"
     )
-
-    run_cloud_scrape
-
 
     # #1: Scrapy
     # scrape_data = BashOperator(
