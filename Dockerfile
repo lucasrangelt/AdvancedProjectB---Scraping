@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/devcontainers/python:3.11
+WORKDIR /app
 # USER root
 RUN apt-get update && apt-get install -y curl unzip \
     libpq-dev \
@@ -10,4 +11,5 @@ RUN apt-get update && apt-get install -y curl unzip \
     && rm -rf awscliv2.zip ./aws \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+COPY . /app
 # USER vscode

@@ -6,7 +6,7 @@ from datetime import datetime
 project_path = '/opt/airflow/project'
 
 CLUSTER_NAME = "default"
-TASK_DEFINITION = "default-ecommerce-scraper-aws-repo-02fe:1"
+TASK_DEFINITION = "default-ecommerce-scraper-aws-repo-02fe"
 SUBNETS = ["subnet-0f4aafd135a236f88"]
 SECURITY_GROUPS = ["sg-0cfb5511c9fcd96f9"]
 
