@@ -11,5 +11,7 @@ RUN apt-get update && apt-get install -y curl unzip \
     && rm -rf awscliv2.zip ./aws \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-COPY . /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 # USER vscode

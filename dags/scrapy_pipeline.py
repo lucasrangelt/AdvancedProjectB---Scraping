@@ -27,7 +27,7 @@ with DAG(
             "containerOverrides": [
                 {
                     "name": "Main",
-                    "command": ["scrapy", "crawl", "cute_mercado_livre_spider"],
+                    "command": ["sh", "-c", "cd ecommerce_scraper && scrapy crawl cute_mercado_livre_spider"],
                 },
             ],
         },
