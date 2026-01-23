@@ -18,35 +18,35 @@ with DAG(
     catchup=False
 ) as dag:
     
-    run_cloud_scrape = EcsRunTaskOperator(
-        task_id="run_scrapy_on_fargate",
-        cluster=CLUSTER_NAME,
-        task_definition=TASK_DEFINITION,
-        launch_type="FARGATE",
-        overrides={
-            "containerOverrides": [
-                {
-                    "name": "Main",
-                    "command": ["sh", "-c", "cd ecommerce_scraper && scrapy crawl cute_mercado_livre_spider"],
-                },
-            ],
-        },
-        network_configuration={
-            "awsvpcConfiguration": {
-                "subnets": SUBNETS,
-                "securityGroups": SECURITY_GROUPS,
-                "assignPublicIp": "ENABLED",
-            },
-        },
-        aws_conn_id="aws_default",
-        region_name="sa-east-1"
-    )
-
-    # #1: Scrapy
-    # scrape_data = BashOperator(
-    #     task_id='run_scrapy',
-    #     bash_command='cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
+    # run_cloud_scrape = EcsRunTaskOperator(
+    #     task_id="run_scrapy_on_fargate",
+    #     cluster=CLUSTER_NAME,
+    #     task_definition=TASK_DEFINITION,
+    #     launch_type="FARGATE",
+    #     overrides={
+    #         "containerOverrides": [
+    #             {
+    #                 "name": "Main",
+    #                 "command": ["sh", "-c", "cd ecommerce_scraper && scrapy crawl cute_mercado_livre_spider"],
+    #             },
+    #         ],
+    #     },
+    #     network_configuration={
+    #         "awsvpcConfiguration": {
+    #             "subnets": SUBNETS,
+    #             "securityGroups": SECURITY_GROUPS,
+    #             "assignPublicIp": "ENABLED",
+    #         },
+    #     },
+    #     aws_conn_id="aws_default",
+    #     region_name="sa-east-1"
     # )
+
+    #1: Scrapy
+    scrape_data = BashOperator(
+        task_id='run_scrapy',
+        bash_command='cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
+    )
 
     #2: DBT Staging
     dbt_staging = BashOperator(
@@ -66,4 +66,4 @@ with DAG(
         bash_command=f'cd {project_path}/dbt_project && dbt run --select dim_products fact_listings --profiles-dir .'
     )
 
-    run_cloud_scrape >> dbt_staging >> gx_validate >> dbt_marts
+    scrape_data >> dbt_staging >> gx_validate >> dbt_marts
