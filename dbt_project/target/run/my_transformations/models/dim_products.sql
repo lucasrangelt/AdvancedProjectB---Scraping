@@ -2,7 +2,7 @@
   
     
 
-  create  table "scrapy_data"."my_dbt_schema"."dim_products__dbt_tmp"
+  create  table "scrapy_data_aws"."my_dbt_schema"."dim_products__dbt_tmp"
   
   
     as
@@ -16,7 +16,7 @@
         memory,
         color
     FROM
-        "scrapy_data"."my_dbt_schema"."stg_data"
+        "scrapy_data_aws"."my_dbt_schema"."stg_data"
 )
 
 SELECT

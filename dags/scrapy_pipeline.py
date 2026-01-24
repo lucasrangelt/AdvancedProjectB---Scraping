@@ -2,6 +2,8 @@ from airflow import DAG
 from airflow.providers.standard.operators.bash import BashOperator
 from airflow.providers.amazon.aws.operators.ecs import EcsRunTaskOperator
 from datetime import datetime
+from dotenv import dotenv_values
+import os
 
 project_path = '/opt/airflow/project'
 
@@ -10,6 +12,7 @@ TASK_DEFINITION = "default-ecommerce-scraper-aws-repo-02fe"
 SUBNETS = ["subnet-0f4aafd135a236f88"]
 SECURITY_GROUPS = ["sg-0cfb5511c9fcd96f9"]
 
+my_env = dotenv_values(f"{project_path}/.env")
 
 with DAG(
     dag_id="scrapy_pipeline",
@@ -45,13 +48,21 @@ with DAG(
     #1: Scrapy
     scrape_data = BashOperator(
         task_id='run_scrapy',
-        bash_command='cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
+        bash_command=f'cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
     )
 
     #2: DBT Staging
     dbt_staging = BashOperator(
         task_id='run_dbt_part1',
-        bash_command=f'cd {project_path}/dbt_project && dbt run --select stg_data --profiles-dir .'
+        bash_command=f'cd {project_path}/dbt_project && dbt run --select stg_data --profiles-dir . --debug',
+        env={
+            'ENV_HOST': my_env.get('ENV_HOST'),
+            'ENV_PORT': my_env.get('ENV_PORT'),
+            'ENV_PASSWORD': my_env.get('ENV_PASSWORD'),
+            'ENV_DATABASE': my_env.get('ENV_DATABASE'),
+            'ENV_USER': my_env.get('ENV_USER')
+        },
+        append_env=True
     )
 
     #3: Great Expectations
@@ -63,7 +74,15 @@ with DAG(
     #4: DBT Marts
     dbt_marts = BashOperator(
         task_id='run_dbt_part2',
-        bash_command=f'cd {project_path}/dbt_project && dbt run --select dim_products fact_listings --profiles-dir .'
+        bash_command=f'cd {project_path}/dbt_project && dbt run --select dim_products fact_listings --profiles-dir .',
+        env={
+            'ENV_HOST': my_env.get('ENV_HOST'),
+            'ENV_PORT': my_env.get('ENV_PORT'),
+            'ENV_PASSWORD': my_env.get('ENV_PASSWORD'),
+            'ENV_DATABASE': my_env.get('ENV_DATABASE'),
+            'ENV_USER': my_env.get('ENV_USER')
+        },
+        append_env=True
     )
 
     scrape_data >> dbt_staging >> gx_validate >> dbt_marts

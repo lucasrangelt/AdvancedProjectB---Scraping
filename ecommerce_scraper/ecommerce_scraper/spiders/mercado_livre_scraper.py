@@ -42,6 +42,6 @@ class MercadoLivreSpider(scrapy.Spider):
             item["rating"] = rating if rating else None
             item["site_name"] = "mercado_livre"
             yield item
-        next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
-        if next_page:
-            yield response.follow(next_page, callback=self.parse)
+        # next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
+        # if next_page:
+        #     yield response.follow(next_page, callback=self.parse)

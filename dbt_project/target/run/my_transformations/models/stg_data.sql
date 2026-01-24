@@ -2,7 +2,7 @@
   
     
 
-  create  table "scrapy_data"."my_dbt_schema"."stg_data__dbt_tmp"
+  create  table "scrapy_data_aws"."my_dbt_schema"."stg_data__dbt_tmp"
   
   
     as
@@ -10,7 +10,7 @@
   (
     WITH data_to_stg AS (
     
-        SELECT * FROM "scrapy_data"."public"."raw_data"
+        SELECT * FROM "scrapy_data_aws"."public"."raw_data"
     
 )
 

@@ -3,9 +3,9 @@
 import great_expectations as gx
 from great_expectations.exceptions import DataContextError
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()
+load_dotenv(find_dotenv(), override=True)
 
 ENV_HOST = os.getenv("ENV_HOST")
 ENV_USER = os.getenv("ENV_USER")

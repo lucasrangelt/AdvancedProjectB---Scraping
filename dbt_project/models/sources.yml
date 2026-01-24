@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: my_source
-    database: scrapy_data
+    database: "{{ env_var('ENV_DATABASE') }}"
     schema: public
     tables:
     - name: raw_data

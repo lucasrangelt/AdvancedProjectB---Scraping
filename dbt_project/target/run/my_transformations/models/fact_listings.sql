@@ -2,7 +2,7 @@
   
     
 
-  create  table "scrapy_data"."my_dbt_schema"."fact_listings__dbt_tmp"
+  create  table "scrapy_data_aws"."my_dbt_schema"."fact_listings__dbt_tmp"
   
   
     as
@@ -15,6 +15,6 @@
     scraped_at,
     site_name
 FROM
-    "scrapy_data"."my_dbt_schema"."stg_data"
+    "scrapy_data_aws"."my_dbt_schema"."stg_data"
   );
   

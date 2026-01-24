@@ -2,9 +2,9 @@ import great_expectations as gx
 import sys
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()
+load_dotenv(find_dotenv(), override=True)
 
 ENV_HOST = os.getenv("ENV_HOST")
 ENV_USER = os.getenv("ENV_USER")
