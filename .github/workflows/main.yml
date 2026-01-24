@@ -11,6 +11,12 @@ permissions:
   contents: read
 
 jobs:
+  env:
+    ENV_USER: ${{ secrets.USER }}
+    ENV_HOST: ${{ secrets.HOST }}
+    ENV_PASSWORD: ${{ secrets.PASSWORD }}
+    ENV_DATABASE: ${{ secrets.DATABASE }}
+    ENV_PORT: ${{ secrets.PORT }}
   test_and_lint:
     name: "Pipeline Verification (Scrapy, dbt, gx)"
     runs-on: ubuntu-latest
@@ -78,12 +84,6 @@ jobs:
           dbt run --select stg_data --target ci --profiles-dir .
 
       - name: Great Expectations test
-        env:
-          ENV_USER: ${{ secrets.USER }}
-          ENV_HOST: ${{ secrets.HOST }}
-          ENV_PASSWORD: ${{ secrets.PASSWORD }}
-          ENV_DATABASE: ${{ secrets.DATABASE }}
-          ENV_PORT: ${{ secrets.PORT }}
         run: |
           python3 setup_gx.py && python3 run_validation.py
   
