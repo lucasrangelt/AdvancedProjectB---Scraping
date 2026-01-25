@@ -24,6 +24,7 @@ class PostgresPipeline:
         self.cur.execute("""
             CREATE TABLE IF NOT EXISTS test_data (
                 id SERIAL PRIMARY KEY,
+                short_title TEXT,
                 full_title TEXT,
                 memory TEXT,
                 storage TEXT,
@@ -37,17 +38,23 @@ class PostgresPipeline:
         self.connection.commit()
     
     def process_item(self, item, spider):
-        self.cur.execute("""
-            INSERT INTO test_data (full_title, memory, storage, color, price, rating) VALUES (%s, %s, %s, %s, %s, %s)
-            """, (
-            item["full_title"],
-            item["memory"],
-            item["storage"],
-            item["color"],
-            item["price"],
-            item["rating"]
-        ))
-        self.connection.commit()
+        try:
+            self.cur.execute("""
+                INSERT INTO test_data (short_title, full_title, memory, storage, color, price, rating, site_name) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                """, (
+                item["short_title"],
+                item["full_title"],
+                item["memory"],
+                item["storage"],
+                item["color"],
+                item["price"],
+                item["rating"],
+                item["site_name"]
+            ))
+            self.connection.commit()
+        except Exception as e:
+            print(f"ERROR: {e}")
+            self.connection.rollback()
         return item
 
     def close_spider(self, spider):

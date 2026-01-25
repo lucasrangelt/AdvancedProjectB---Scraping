@@ -5,7 +5,8 @@
 
 import scrapy
 
-class NotebookItem(scrapy.Item):
+class EcommerceItem(scrapy.Item):
+    short_title = scrapy.Field()
     full_title = scrapy.Field()
     memory = scrapy.Field()
     storage = scrapy.Field()
