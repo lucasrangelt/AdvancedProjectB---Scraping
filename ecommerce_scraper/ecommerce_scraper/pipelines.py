@@ -22,7 +22,7 @@ class PostgresPipeline:
         )
         self.cur = self.connection.cursor()
         self.cur.execute("""
-            CREATE TABLE IF NOT EXISTS raw_data (
+            CREATE TABLE IF NOT EXISTS test_data (
                 id SERIAL PRIMARY KEY,
                 full_title TEXT,
                 memory TEXT,
@@ -38,7 +38,7 @@ class PostgresPipeline:
     
     def process_item(self, item, spider):
         self.cur.execute("""
-            INSERT INTO raw_data (full_title, memory, storage, color, price, rating) VALUES (%s, %s, %s, %s, %s, %s)
+            INSERT INTO test_data (full_title, memory, storage, color, price, rating) VALUES (%s, %s, %s, %s, %s, %s)
             """, (
             item["full_title"],
             item["memory"],

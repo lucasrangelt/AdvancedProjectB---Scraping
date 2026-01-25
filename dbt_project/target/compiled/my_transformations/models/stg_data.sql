@@ -6,10 +6,11 @@ WITH data_to_stg AS (
 
 SELECT
     CAST(id AS INTEGER) AS id,
-    CASE
-        WHEN full_title ILIKE '%notebook%' THEN 'notebook'
-        ELSE 'other'
-    END AS short_title,
+    -- CASE
+    --     WHEN full_title ILIKE '%notebook%' THEN 'notebook'
+    --     ELSE 'other'
+    -- END AS short_title,
+    short_title,
     full_title,
     memory,
     storage,
