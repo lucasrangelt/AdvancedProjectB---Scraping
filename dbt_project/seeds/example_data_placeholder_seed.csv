@@ -1,3 +1,3 @@
-id,full_title,memory,storage,color,price,rating,site_name,scraped_at
-1,notebook exemplo 8gb memoria 512gb ssd cinza,8gb,512gb,cinza,2499,4.8,MercadoLivre,2026-01-16 01:39:25.552
-2,smartphone exemplo 4gb memoria 256gb ssd preto,4gb,256gb,preto,899,4.9,MercadoLivre,2026-01-17 01:39:25.553
+id,full_title,memory,storage,color,price,rating,site_name,scraped_at,short_title
+1,notebook exemplo 8gb memoria 512gb ssd cinza,8gb,512gb,cinza,2499,4.8,MercadoLivre,2026-01-16 01:39:25.552,notebook
+2,smartphone exemplo 4gb memoria 256gb ssd preto,4gb,256gb,preto,899,4.9,MercadoLivre,2026-01-17 01:39:25.553,smartphone
