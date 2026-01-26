@@ -7,6 +7,7 @@ import os
 
 project_path = '/opt/airflow/project'
 
+SCRAPY_BOT_NAMES = ['mercado_livre', 'ebay', 'amazon']
 # CLUSTER_NAME = "default"
 # TASK_DEFINITION = "default-ecommerce-scraper-aws-repo-02fe"
 # SUBNETS = ["subnet-0f4aafd135a236f88"]
@@ -46,10 +47,11 @@ with DAG(
     # )
 
     #1: Scrapy
-    scrape_data = BashOperator(
-        task_id='run_scrapy',
-        bash_command=f'cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_mercado_livre_spider',
-    )
+    for i in SCRAPY_BOT_NAMES:
+        scrape_data = BashOperator(
+            task_id=f'run_scrapy_{i}',
+            bash_command=f'cd {project_path}/ecommerce_scraper && python3 -m scrapy crawl cute_{i}_spider',
+        )
 
     #2: DBT Staging
     dbt_staging = BashOperator(
