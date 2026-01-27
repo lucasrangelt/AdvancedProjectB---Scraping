@@ -107,7 +107,7 @@ Dia 26: Enfrentei erros "anti-bots" em vários sites no scrapy; atualizei meu Re
 
 Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferramentas padrão de indústria para resolver cada uma das partes do sistema. Algumas ferramentas eu já tinha experiência, mas a maioria delas era novidade para mim. Apesar disso, consegui desenvolver bem as minhas ideias, graças ao vários recursos que busquei. Abaixo, fiz algumas anotações que poderão me ajudar para eventos futuros:
 
-**annotations file items here**
+***🏗️under construction...🏗️***
 
 # Créditos e Referências
 
@@ -149,7 +149,12 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 ---
 ---
 ---
-### Links do Gemini
+### Links do Gemini e Uso da IA
+
+Neste projeto, eu descobri o que significa usar a inteligência artificial como ferramenta de desenvolvimento.
+
+***🏗️under construction...🏗️***
+
 - Tactic Executions: https://gemini.google.com/share/9b04f1af5a43
 - Implement the things you need to learn: https://gemini.google.com/share/860923366ed0
 - What is each thing: https://gemini.google.com/share/68a31589e27b
@@ -157,3 +162,5 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 - Data Engineering and Web Scraping Frequency: https://gemini.google.com/share/4834319f82fd
 
 **Meu e-mail: lucasrangel2011@gmail.com**
+
+**Meu LinkedIn: https://www.linkedin.com/in/lucas-rangel-tietbohl-29791237b/**
