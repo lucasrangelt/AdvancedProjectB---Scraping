@@ -46,15 +46,23 @@ Dia 5: Terminei de integrar toda a principal infraestrutura, corrigindo bugs e e
 
 Dia 6: Integrei o scraper e DBeaver com o PostgreSQL do Docker.
 
+![dbeaver-database-vscode](imgs/2-dbeaver-database-vscode.png)
+
 Dia 7: Organizei, testei e corrigi bugs no scraper.
 
 Dia 8: Planejei, editei, testei o scraper e instalei as bibliotecas de dbt e Great Expectations.
 
+![vscode-dbt-profiles](imgs/3-vscode-dbt-profiles.png)
+
 Dia 9: Planejei, criei pastas para o dbt e utilizei dbt para organizar dados e implementar uma Star Schema.
+
+![database-medallion](imgs/4-database-medallion.png)
 
 Dia 10: Implementei Great Expectations do começo ao fim.
 
 Dia 11: Corrigi bugs e erros no Great Expectations.
+
+![vscode-gx-validation](imgs/5-vscode-gx-validation.png)
 
 Dia 12: Comecei a preparar a infraestrutura do Airflow.
 
@@ -63,6 +71,10 @@ Dia 13: Corrigi bugs e terminei de instalar a infraestrutura do Airflow e comece
 Dia 14: Continuei tentando implementar o Airflow usando a template da versão 2.0.
 
 Dia 15: Troquei a minha template do Airflow pela oficial da versão 3.1.5. Terminei de implementar o Airflow.
+
+![docker-airflow](imgs/6-docker-airflow.png)
+
+![airflow-ui](imgs/7-airflow-ui.png)
 
 Dia 16: Corrigi minhas credenciais e tornei elas secretas com o arquivo .env e comecei a implementar Github Actions para CI/CD.
 
@@ -78,6 +90,8 @@ Dia 21: Criei uma base de dados PostgreSQL na nuvem e corrigi mapeamentos de cha
 
 Dia 22: Corrigi os principais bugs, erros de permissões, etc. efetivamente concluindo a pipeline e o projeto principal.
 
+![aws-rds-services](imgs/8-aws-rds-services.png)
+
 Dia 23: Corrigi bugs silenciosos e resolvi fazer o Scrapy executar de forma local para evitar proxies.
 
 Dia 24: Escalei o scrapy, mudando o código para fazer scraping de 5 itens e adicionei novos scrapers para mais sites.
@@ -85,22 +99,6 @@ Dia 24: Escalei o scrapy, mudando o código para fazer scraping de 5 itens e adi
 Dia 25: Reuni informações para trabalhar no arquivo ReadMe.md e garantir uma boa apresentação do projeto.
 
 Dia 26: Enfrentei erros "anti-bots" em vários sites no scrapy; atualizei meu ReadMe.md e coletei imagens para visualizações.
-
-# Galeria
-
-![dbeaver-database-vscode](imgs/2-dbeaver-database-vscode.png)
-
-![vscode-dbt-profiles](imgs/3-vscode-dbt-profiles.png)
-
-![database-medallion](imgs/4-database-medallion.png)
-
-![vscode-gx-validation](imgs/5-vscode-gx-validation.png)
-
-![docker-airflow](imgs/6-docker-airflow.png)
-
-![airflow-ui](imgs/7-airflow-ui.png)
-
-![aws-rds-services](imgs/8-aws-rds-services.png)
 
 ![pipeline-final-2026-01-27-0122](imgs/9-pipeline-final-2026-01-27-0122.png)
 
