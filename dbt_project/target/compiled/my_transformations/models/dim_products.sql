@@ -6,7 +6,7 @@ WITH products_to_dim as (
         memory,
         color
     FROM
-        "scrapy_data_aws"."my_dbt_schema"."stg_data"
+        "scrapy_data"."my_dbt_schema"."stg_data"
 )
 
 SELECT

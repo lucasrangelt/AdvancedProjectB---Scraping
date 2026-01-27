@@ -23,7 +23,7 @@ def func():
     result = checkpoint.run()
     context.build_data_docs()
     if not result.success:
-        print("⚠️⚠️⚠️⚠️⚠️Data quality warning: validations not passed. Check your GX html and dbt modelling.⚠️⚠️⚠️⚠️⚠️")
+        print("⚠️ ⚠️ ⚠️ ⚠️ ⚠️  Data quality warning: validations not passed. Check your GX html and dbt modelling.⚠️ ⚠️ ⚠️ ⚠️ ⚠️")
         sys.exit(0)
     else:
         print("Data quality passed! Safe to trigger dbt.")

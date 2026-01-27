@@ -2,15 +2,15 @@ import scrapy
 import re
 from ecommerce_scraper.items import EcommerceItem
 
-class EBaySpider(scrapy.Spider):
-    name = 'cute_ebay_spider'
-    allowed_domains = ['www.ebay.com']
+class AmazonSpider(scrapy.Spider):
+    name = 'cute_amazon_spider'
+    allowed_domains = ['www.amazon.com.br']
     categories = {
-        "notebook": "https://www.ebay.com/sch/i.html?_nkw=notebook",
-        "smartphone": "https://www.ebay.com/sch/i.html?_nkw=smartphone",
-        "tablet": "https://www.ebay.com/sch/i.html?_nkw=tablet",
-        "console": "https://www.ebay.com/sch/i.html?_nkw=console",
-        "headset": "https://www.ebay.com/sch/i.html?_nkw=headset"
+        "notebook": "https://www.amazon.com.br/s?k=notebook",
+        "smartphone": "https://www.amazon.com.br/s?k=smartphone",
+        "tablet": "https://www.amazon.com.br/s?k=tablet",
+        "console": "https://www.amazon.com.br/s?k=console",
+        "headset": "https://www.amazon.com.br/s?k=headset"
     }
 
     async def start(self):
@@ -18,14 +18,14 @@ class EBaySpider(scrapy.Spider):
             yield scrapy.Request(url, callback=self.parse, meta={'short_title': cat})
     
     def parse(self, response):
-        items = response.css('li.s-card.s-card--horizontal')
+        items = response.css('div.sg-col-4-of-4.sg-col-4-of-24.sg-col-4-of-12.s-result-item.s-asin.sg-col-4-of-16 sg-col.s-widget-spacing-small.sg-col-4-of-8 sg-col-4-of-20')
         short_title = response.meta['short_title']
         for i in items:
-            title = i.css('span.su-styled-text primary default::text').get() or ""
+            title = i.css('h2.a-size-base-plus.a-spacing-none.a-color-base.a-text-normal::text').get() or ""
             clean_title = re.sub(r'\bNOVO|FRETE GRATIS|FRETE GRÁTIS|GAMER|PROMOCAO|PROMOÇAO|PROMOCÃO|PROMOÇÃO|OFERTA|™|®', '', title, flags=re.IGNORECASE)
             clean_title = clean_title.replace("  ", " ")
 
-            price = i.css('span.su-styled-text primary bold large-1 s-card__price::text').get() or None
+            price = i.css('span.a-price-whole::text').get() or None
             price = price.replace("R$", "").strip() if price else None
             rating = None
 
@@ -41,7 +41,7 @@ class EBaySpider(scrapy.Spider):
             item["color"] = color.group(1) if color else "N/A"
             item["price"] = price if price else None
             item["rating"] = rating if rating else None
-            item["site_name"] = "ebay"
+            item["site_name"] = "amazon"
             yield item
         # next_page = response.css('li.andes-pagination__button.andes-pagination__button--next a::attr(href)').get()
         # if next_page:

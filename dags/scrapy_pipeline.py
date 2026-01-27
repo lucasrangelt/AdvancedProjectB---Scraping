@@ -7,7 +7,7 @@ import os
 
 project_path = '/opt/airflow/project'
 
-SCRAPY_BOT_NAMES = ['mercado_livre', 'ebay', 'amazon']
+SCRAPY_BOT_NAMES = ['mercado_livre']
 # CLUSTER_NAME = "default"
 # TASK_DEFINITION = "default-ecommerce-scraper-aws-repo-02fe"
 # SUBNETS = ["subnet-0f4aafd135a236f88"]

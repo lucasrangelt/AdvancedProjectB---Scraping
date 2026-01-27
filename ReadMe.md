@@ -1,8 +1,8 @@
 # Introdução
 
-Este projeto tem como objetivo propor a solução para o seguinte problema hipotético:
+Analise o seguinte problema hipotético:
 
-"Foi verificado que a empresa não está tendo a quantidade de vendas que esperava em relação aos seus produtos mais vendidos, que são notebooks, smartphones, tablets, headsets e consoles. Com suspeitas de que as E-commerce rivais tenham uma vantagem atrativa em relação aos preços, faz-se necessário verificar esses preços para conferir se há ou não essa vantagem e qual o tamanho dela. O objetivo seria construir uma pipeline para coletar dados desses produtos em pelo menos três dos seguintes sites: Mercado Livre, Shopee, Amazon, Aliexpress e eBay"
+"Foi verificado que a empresa não está tendo a quantidade de vendas que esperava em relação aos seus produtos mais vendidos, que são notebooks, smartphones, tablets, headsets e consoles. Com suspeitas de que as E-commerce rivais tenham uma vantagem atrativa em relação aos preços, faz-se necessário verificar esses preços para conferir se há ou não essa vantagem e qual o tamanho dela. O objetivo seria construir uma pipeline para coletar dados de produtos em um site de E-commerce."
 
 Tendo o problema em mente, vamos às soluções.
 
@@ -21,7 +21,7 @@ Tendo o problema em mente, vamos às soluções.
 - Usei **Airflow** para orquestrar e executar em horário fixo múltiplas tarefas dependentes entre si, buscando saber onde e como qualquer delas pode vir a falhar.
 - Usei **GitHub** para subir meu projeto e torná-lo acessível a todos.
 - Usei **GitHub Actions** para garantir que o código funcione sem erros de digitação e/ou integração, trazendo assim a CI/CD (integração e desenvolvimento contínuo) para o projeto.
-- Usei **.env**, **GitHub Secrets** e **AWS Secrets** para garantir a segurança das minhas credenciais.
+- Usei **.env**, **GitHub Secrets** e **AWS Secrets Manager** para garantir a segurança das minhas credenciais.
 - Usei **AWS** e suas ferramentas de **RDS, ECS/Fargate, ECR, IAM**, entre outros para subir e manter minha base de dados na nuvem, e garantir que o projeto possa rodar de forma remota.
 
 # Log e Processo de Desenvolvimento
@@ -83,6 +83,26 @@ Dia 23: Corrigi bugs silenciosos e resolvi fazer o Scrapy executar de forma loca
 Dia 24: Escalei o scrapy, mudando o código para fazer scraping de 5 itens e adicionei novos scrapers para mais sites.
 
 Dia 25: Reuni informações para trabalhar no arquivo ReadMe.md e garantir uma boa apresentação do projeto.
+
+Dia 26: Enfrentei erros "anti-bots" em vários sites no scrapy; atualizei meu ReadMe.md e coletei imagens para visualizações.
+
+# Galeria
+
+![dbeaver-database-vscode](imgs/2-dbeaver-database-vscode.png)
+
+![vscode-dbt-profiles](imgs/3-vscode-dbt-profiles.png)
+
+![database-medallion](imgs/4-database-medallion.png)
+
+![vscode-gx-validation](imgs/5-vscode-gx-validation.png)
+
+![docker-airflow](imgs/6-docker-airflow.png)
+
+![airflow-ui](imgs/7-airflow-ui.png)
+
+![aws-rds-services](imgs/8-aws-rds-services.png)
+
+![pipeline-final-2026-01-27-0122](imgs/9-pipeline-final-2026-01-27-0122.png)
 
 # Aprendizados
 
