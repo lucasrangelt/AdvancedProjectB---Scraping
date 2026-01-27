@@ -2,7 +2,7 @@
 
 Analise o seguinte problema hipotético:
 
-"Foi verificado que a empresa não está tendo a quantidade de vendas que esperava em relação aos seus produtos mais vendidos, que são notebooks, smartphones, tablets, headsets e consoles. Com suspeitas de que as E-commerce rivais tenham uma vantagem atrativa em relação aos preços, faz-se necessário verificar esses preços para conferir se há ou não essa vantagem e qual o tamanho dela. O objetivo seria construir uma pipeline para coletar dados de produtos em um site de E-commerce."
+"Foi verificado que a empresa não está tendo a quantidade de vendas que esperava em relação aos seus produtos mais vendidos, que são notebooks, smartphones, tablets, headsets e consoles. Com suspeitas de que as E-commerce rivais tenham uma vantagem atrativa em relação aos preços, faz-se necessário verificar esses preços para conferir se há ou não essa vantagem e qual o tamanho dela. O objetivo seria construir uma pipeline para coletar dados de produtos em um site de e-commerce."
 
 Tendo o problema em mente, vamos às soluções.
 
@@ -23,6 +23,7 @@ Tendo o problema em mente, vamos às soluções.
 - Usei **GitHub Actions** para garantir que o código funcione sem erros de digitação e/ou integração, trazendo assim a CI/CD (integração e desenvolvimento contínuo) para o projeto.
 - Usei **.env**, **GitHub Secrets** e **AWS Secrets Manager** para garantir a segurança das minhas credenciais.
 - Usei **AWS** e suas ferramentas de **RDS, ECS/Fargate, ECR, IAM**, entre outros para subir e manter minha base de dados na nuvem, e garantir que o projeto possa rodar de forma remota.
+- Usei **Google Gemini** como ferramenta de auxílio para solucionar alguns erros de sintaxe e fazer a depuração (debug) de alguns erros/logs. Também usei para entender os vários usos e aplicações das ferramentas aplicadas.
 
 # Log e Processo de Desenvolvimento
 
@@ -110,5 +111,49 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 
 # Créditos e Referências
 
-https://github.com/lucasrangelt/PYTHONproject
-https://github.com/lucasrangelt/SQLcourse
+![2026-01-02-Google-Gemini-1](imgs/creditos/2026-01-02-Google-Gemini-1.png)
+![2026-01-02-Google-Gemini-2](imgs/creditos/2026-01-02-Google-Gemini-2.png)
+---
+---
+---
+![2026-01-07-at-18-11-14-AddyOsmani](imgs/creditos/2026-01-07-at-18-11-14-AddyOsmani.png)
+---
+---
+---
+![2026-01-08-at-12-31-03-Google-Gemini](imgs/creditos/2026-01-08-at-12-31-03-Google-Gemini.png)
+---
+---
+---
+![2026-01-12-at-23-32-16-ProgrammerHumor](imgs/creditos/2026-01-12-at-23-32-16-ProgrammerHumor.png)
+![2026-01-12-at-23-32-28-ProgrammerHumor](imgs/creditos/2026-01-12-at-23-32-28-ProgrammerHumor.png)
+![2026-01-13-at-00-03-10-ProgrammerHumor](imgs/creditos/2026-01-13-at-00-03-10-ProgrammerHumor.png)
+---
+---
+---
+![2026-01-19-at-11-27-25-brdev](imgs/creditos/2026-01-19-at-11-27-25-brdev.png)
+---
+---
+---
+![2026-01-21-at-02-35-27-Google-Gemini](imgs/creditos/2026-01-21-at-02-35-27-Google-Gemini.png)
+
+### Links
+
+- Projeto Tutorial de Python: https://github.com/lucasrangelt/PYTHONproject
+- Projeto Tutorial de SQL: https://github.com/lucasrangelt/SQLcourse
+- Plataforma de Diagramação: https://excalidraw.com/
+- Tutorial de Airflow/AWS: https://www.youtube.com/watch?v=o88LNQDH2uI
+- Tutorial para Instalar Airflow no Docker: https://www.youtube.com/watch?v=ma8OuIz-ai0
+- Airflow 3.1.5 (Documentação): https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+- Para referência e Debug: https://www.startdataengineering.com/
+- Curso de Engenharia de Dados da IBM: https://www.coursera.org/professional-certificates/ibm-data-engineer
+---
+---
+---
+### Links do Gemini
+- Tactic Executions: https://gemini.google.com/share/9b04f1af5a43
+- Implement the things you need to learn: https://gemini.google.com/share/860923366ed0
+- What is each thing: https://gemini.google.com/share/68a31589e27b
+- Dbt Source YAML Comparison: https://gemini.google.com/share/1272ec020734
+- Data Engineering and Web Scraping Frequency: https://gemini.google.com/share/4834319f82fd
+
+**Meu e-mail: lucasrangel2011@gmail.com**
