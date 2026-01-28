@@ -173,7 +173,7 @@ Ressaltando que, apesar das várias boas sugestões que recebi, no final eu soub
 - IA me sugeriu restringir para que apenas minha "main" branch publicasse no AWS. Permiti todas, a fim de testar possibilidades.
 
 ***🏗️under construction...🏗️***
-note to self: maybe i should ask for more of these emojis...
+
 
 - Tactical Executions: https://gemini.google.com/share/9b04f1af5a43
 - Implement the things you need to learn: https://gemini.google.com/share/860923366ed0
