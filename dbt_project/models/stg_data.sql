@@ -2,7 +2,13 @@ WITH data_to_stg AS (
     {% if target.name == 'ci' %}
         SELECT * FROM {{ref('example_data_placeholder_seed')}}
     {% else %}
-        SELECT * FROM {{source('my_source', 'raw_data')}}
+        SELECT
+            *,
+            ROW_NUMBER() OVER (
+                PARTITION BY full_title, memory, storage, color, site_name
+                ORDER BY scraped_at DESC
+            ) AS row_num
+        FROM {{source('my_source', 'raw_data')}}
     {% endif %}
 )
 
@@ -26,3 +32,9 @@ SELECT
     site_name
 FROM
     data_to_stg
+WHERE
+    {% if target.name != 'ci' %}
+        row_num = 1
+    {% else %}
+        TRUE
+    {% endif %}
