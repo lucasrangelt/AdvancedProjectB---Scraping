@@ -1,6 +1,7 @@
 FROM mcr.microsoft.com/devcontainers/python:3.11
 WORKDIR /app
 # USER root
+RUN rm -f /etc/apt/sources.list.d/yarn.list
 RUN apt-get update && apt-get install -y curl unzip \
     libpq-dev \
     gcc \
