@@ -1,0 +1,12 @@
+my_transformations:
+  outputs:
+    dev:
+      type: postgres
+      threads: 1
+      host: "{{ env_var('ENV_HOST') }}"
+      port: "{{ env_var('ENV_PORT') | int }}"
+      user: "{{ env_var('ENV_USER') }}"
+      password: "{{ env_var('ENV_PASSWORD') }}"
+      dbname: "{{ env_var('ENV_DATABASE') }}"
+      schema: my_dbt_schema
+  target: dev

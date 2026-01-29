@@ -6,6 +6,14 @@ Analise o seguinte problema hipotético:
 
 Tendo o problema em mente, vamos às soluções.
 
+## Setup e instruções para rodar:
+
+1. Instale o Docker
+2. Insira o comando "docker compose up" com o terminal aberto na pasta principal do projeto (ou construa o container utilizando a ferramenta de sua preferência, como a extensão do VS Code)
+3. Remova o ".example" dos arquivos .env.example e dbt_project/profiles.yml.example
+4. Troque os comentários do .env pelas suas credenciais
+5. Defina um horário de funcionamento diário no arquivo dags/scrapy_pipeline.py, ou abra a interface do Airflow no seu navegador (endereço: http://localhost:8080/), insira "airflow" como nome de usuário e password (o ideal seria mudar essas credenciais depois) vá em dags e rode o scraper manualmente
+
 # Ferramentas Escolhidas
 
 - Usei **VS Code** como meu IDE para programar em várias linguagens como **Python**, **Yaml**, **Jinja** e **SQL**.
@@ -114,7 +122,9 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 - Focar na segurança, arquitetura e infraestrutura do projeto primeiro e apenas depois na sintaxe das ferramentas.
 - Aprendi como funciona todo o ciclo de uma pipeline, o processo de coleta (API Endpoint/Scrapy/outras possíveis ferramentas), modelagem (dbt), qualidade (GX), armazenamento (PostgreSQL/RDS), orquestramento (Airflow), etc.
 - Sempre começar um projeto utilizando .env quando necessário, em vez de implementar depois.
+- Aprendi a não me importar com "marcas" e sim com a entrega do projeto. Quando a Azure me rejeitou (3 vezes), fui para a competição para garantir continuidade.
 - Ao criar uma base de dados no AWS, apenas uma instância será criada. O nome dela será postgres, apesar de algum outro nome escolhido. Para resolver isso, deve-se entrar no DBeaver (ou na ferramenta de visualização utilizada), conectar-se à instância na nuvem e criar uma com o nome desejado.
+- No final, escolhi puxar o meu scraper de volta para o ambiente local, pois caso contrário iria ter que pagar proxies privadas para fazer scraping. O Airflow também ficou na minha máquina local, visto que iria ser desnecessariamente caro ter uma ferramenta tão complexa e pesada rodando em nuvem.
 
 # Créditos e Referências
 
