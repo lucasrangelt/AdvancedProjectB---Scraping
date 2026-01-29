@@ -183,7 +183,7 @@ Ressaltando que, apesar das várias boas sugestões que recebi, no final eu soub
 - IA sugeriu Airflow 2.7.1. Eu escolhi Airflow 3.1.5 por ser mais atualizado.
 - IA sugeriu sintaxe desatualizada para importar dependências no GX. Verifiquei a documentação e atualizei o código.
 - Decidi deletar todas as minhas imagens e volumes (menos o Postgres) e reconstruir para ver se funcionava normal.
-- IA me sugeriu seguir Scrapy >>> dbt >>> GX no Airflow. Escolhi Scrapy >>> dbt >>> GX >>> dbt para filtrar dados antes de carregar.
+- IA me sugeriu seguir Scrapy >>> dbt (tabela final) >>> GX no Airflow. Escolhi Scrapy >>> dbt (tabela stg) >>> GX >>> dbt (tabela final) para filtrar dados antes de carregar.
 - IA me sugeriu usar o termo "prod" no GitHub Actions. Preferi usar o target "ci" por parecer mais apropriado.
 - IA me sugeriu usar variáveis env como "DB_USER". Escolhi "ENV_USER" pela relação próxima com códigos relacionados.
 - IA me sugeriu usar um comando bash para instalar AWS CLI para meu aplicativo em container. Escolhi instalar no Dockerfile.
