@@ -101,7 +101,7 @@ Dia 25: Reuni informações para trabalhar no arquivo ReadMe.md e garantir uma b
 
 Dia 26: Enfrentei erros "anti-bots" em vários sites no scrapy; atualizei meu ReadMe.md e coletei imagens para visualizações.
 
-Dia 27: Conclui meu arquivo ReamMe.md
+Dia 27: Conclui meu arquivo ReamMe.md, terminando a apresentação do projeto.
 
 ![pipeline-final-2026-01-27-0122](imgs/9-pipeline-final-2026-01-27-0122.png)
 
