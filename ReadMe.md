@@ -8,7 +8,7 @@ Tendo o problema em mente, vamos às soluções.
 
 # Ferramentas Escolhidas
 
-- Usei **VS Code** como meu IDE para programar em várias linguagens como **Python**, **Yaml**, **Jinja**.
+- Usei **VS Code** como meu IDE para programar em várias linguagens como **Python**, **Yaml**, **Jinja** e **SQL**.
 - Usei **WSL2** (ambiente virtual do Linux) para armazenar meu projeto, devido a velocidade superior e ao fato de ser o motor nativo do Docker.
 - Usei **Docker** para resolver problemas de dependências locais e globais, além de possibilitar que o sistema seja executado em qualquer máquina.
 - Usei **PostgreSQL** como base de dados para armazenar as informações coletadas dos produtos através do Scrapy.
@@ -105,9 +105,14 @@ Dia 26: Enfrentei erros "anti-bots" em vários sites no scrapy; atualizei meu Re
 
 # Aprendizados
 
-Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferramentas padrão de indústria para resolver cada uma das partes do sistema. Algumas ferramentas eu já tinha experiência, mas a maioria delas era novidade para mim. Apesar disso, consegui desenvolver bem as minhas ideias, graças ao vários recursos que busquei. Abaixo, fiz algumas anotações que poderão me ajudar para eventos futuros:
+Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferramentas padrão de indústria para resolver cada uma das partes do sistema. Algumas ferramentas eu já tinha experiência, mas a maioria delas era novidade para mim. Apesar disso, consegui desenvolver bem as minhas ideias, graças ao vários recursos que busquei. Entre os vários aprendizados que obtive, eis os principais que poderão me ajudar para eventos futuros:
 
-***🏗️under construction...🏗️***
+- Aprendi várias templates de arquivos como Dockerfile, docker-compose.yml, main.yml, DAG.py, etc.
+- Não "forçar" a template da versão de uma ferramenta para outra versão.
+- Focar na segurança, arquitetura e infraestrutura do projeto primeiro e apenas depois na sintaxe das ferramentas.
+- Aprendi como funciona todo o ciclo de uma pipeline, o processo de coleta (API Endpoint/Scrapy/outras possíveis ferramentas), modelagem (dbt), qualidade (GX), armazenamento (PostgreSQL/RDS), orquestramento (Airflow), etc.
+- Sempre começar um projeto utilizando .env quando necessário, em vez de implementar depois.
+- Ao criar uma base de dados no AWS, apenas uma instância será criada. O nome dela será postgres, apesar de algum outro nome escolhido. Para resolver isso, deve-se entrar no DBeaver (ou na ferramenta de visualização utilizada), conectar-se à instância na nuvem e criar uma com o nome desejado.
 
 # Créditos e Referências
 
@@ -149,13 +154,23 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 ---
 ---
 ---
-### Links do Gemini e Uso da IA
+### Links do Gemini
+
+- Tactical Executions: https://gemini.google.com/share/9b04f1af5a43
+- Implement the things you need to learn: https://gemini.google.com/share/860923366ed0
+- What is each thing: https://gemini.google.com/share/68a31589e27b
+- Dbt Source YAML Comparison: https://gemini.google.com/share/1272ec020734
+- Data Engineering and Web Scraping Frequency: https://gemini.google.com/share/4834319f82fd
+
+### Uso da IA
 
 Neste projeto, eu descobri o que significa usar a inteligência artificial como ferramenta de desenvolvimento na prática. Apesar da IA ajudar com algumas sugestões, se não forem ideais e o desenvolvedor aceitar e se aprofundar nelas, o controle do "leme" pode ser perdido.
 
 A IA é como aquele veterano de guerra que, devido à idade, pode acabar "aumentando" ou "trocando as coisas de espaço temporal". Por exemplo, ele pode começar a falar sobre como "a Alemanha Oriental é um país ultrapassado, que vai contra a democracia e os direitos dos seus cidadãos", e aí você lembra ele de que a Alemanha se unificou há mais de 30 anos e ele responde com "Você está absolutamente certo!!" e começa a concordar e a contar coisas. Ele tem muito a ensinar, mas quem está ouvindo deve ter ou um pouco de conhecimento prévio, ou um lugar seguro para testar o que foi ouvido antes de sair espalhando informação desatualizada.
 
 Na maioria dos casos que a IA "alucinou" foi em relação às interfaces de usuário (UI), como DBeaver, o que faz sentido, pois é mais fácil para ela trabalhar com elementos de texto e lógica do que botões em uma tela que ela não consegue ver.
+
+Se a IA não "te dá a resposta que você quer", é praticamente 100% por causa do jeito que a questão foi formulada: Se você esquecer alguma coisa ou deixar muito vago, a resposta pode não vir muito bem detalhada. Isso pode ser ruim para problemas específicos, ou bom para quem quer sugestões iniciais. Se exagerar nos detalhes, pode-se receber a resposta para 5 ou 6 tipos de problemas quando mal se tem acesso a um deles. Trabalhar com a IA me ensinou jeitos otimizados de se fazer perguntas para resolver problemas.
 
 Ressaltando que, apesar das várias boas sugestões que recebi, no final eu soube assumir o controle e filtrar as que não me agradava. Eis a seguir algumas dessas sugestões (que também provavelmente serão encontradas em algum lugar da conversa "Tactical Executions"):
 
@@ -171,15 +186,6 @@ Ressaltando que, apesar das várias boas sugestões que recebi, no final eu soub
 - IA me sugeriu usar variáveis env como "DB_USER". Escolhi "ENV_USER" pela relação próxima com códigos relacionados.
 - IA me sugeriu usar um comando bash para instalar AWS CLI para meu aplicativo em container. Escolhi instalar no Dockerfile.
 - IA me sugeriu restringir para que apenas minha "main" branch publicasse no AWS. Permiti todas, a fim de testar possibilidades.
-
-***🏗️under construction...🏗️***
-
-
-- Tactical Executions: https://gemini.google.com/share/9b04f1af5a43
-- Implement the things you need to learn: https://gemini.google.com/share/860923366ed0
-- What is each thing: https://gemini.google.com/share/68a31589e27b
-- Dbt Source YAML Comparison: https://gemini.google.com/share/1272ec020734
-- Data Engineering and Web Scraping Frequency: https://gemini.google.com/share/4834319f82fd
 
 **Meu e-mail: lucasrangel2011@gmail.com**
 
