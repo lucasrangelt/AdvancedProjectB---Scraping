@@ -1,6 +1,12 @@
 WITH data_to_stg AS (
     
-        SELECT * FROM "scrapy_data"."public"."raw_data"
+        SELECT
+            *,
+            ROW_NUMBER() OVER (
+                PARTITION BY full_title, memory, storage, color, site_name
+                ORDER BY scraped_at DESC
+            ) AS row_num
+        FROM "scrapy_data"."public"."raw_data"
     
 )
 
@@ -24,3 +30,7 @@ SELECT
     site_name
 FROM
     data_to_stg
+WHERE
+    
+        row_num = 1
+    
