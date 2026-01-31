@@ -113,6 +113,8 @@ Dia 27: Conclui meu arquivo ReamMe.md, terminando a apresentação do projeto.
 
 Dia 28: Garanti a exclusão de itens duplicados no dbt, ao mesmo tempo que facilitei a coleta de dados como "preço ao longo do tempo".
 
+Dia 29: Melhorei o GX para dar um aviso no Discord quando em caso de um erro pequeno, em vez de parar a pipeline inteira.
+
 ![pipeline-final-2026-01-27-0122](imgs/9-pipeline-final-2026-01-27-0122.png)
 
 # Aprendizados

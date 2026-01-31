@@ -38,8 +38,8 @@ def func():
     if not result.success:
         error_message = "⚠️ ⚠️ ⚠️ ⚠️ ⚠️  Data quality warning: validations not passed. Check your GX html and dbt modelling.⚠️ ⚠️ ⚠️ ⚠️ ⚠️"
         print(error_message)
-        sys.exit(0)
         send_discord_alert(error_message)
+        sys.exit(0)
     else:
         print("Data quality passed! Safe to trigger dbt.")
         sys.exit(0)
