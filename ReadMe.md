@@ -162,10 +162,11 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 - Projeto Tutorial de Python: https://github.com/lucasrangelt/PYTHONproject
 - Projeto Tutorial de SQL: https://github.com/lucasrangelt/SQLcourse
 - Plataforma de Diagramação: https://excalidraw.com/
+- Instalando o Docker: https://www.youtube.com/watch?time_continue=1599&v=lP8xXebHmuE&embeds_referring_euri=https%3A%2F%2Fgemini.google.com%2F&embeds_referring_origin=https%3A%2F%2Fgemini.google.com&source_ve_path=Mjg2NjY
 - Tutorial de Airflow/AWS: https://www.youtube.com/watch?v=o88LNQDH2uI
 - Tutorial para Instalar Airflow no Docker: https://www.youtube.com/watch?v=ma8OuIz-ai0
 - Airflow 3.1.5 (Documentação): https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
-- Para referência e Debug: https://www.startdataengineering.com/
+- Para referências e Debug: https://www.startdataengineering.com/
 - Curso de Engenharia de Dados da IBM: https://www.coursera.org/professional-certificates/ibm-data-engineer
 ---
 ---

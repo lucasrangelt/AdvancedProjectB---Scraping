@@ -4,6 +4,7 @@ from airflow.providers.amazon.aws.operators.ecs import EcsRunTaskOperator
 from datetime import datetime
 from dotenv import dotenv_values
 import os
+import pendulum
 
 project_path = '/opt/airflow/project'
 
@@ -17,8 +18,8 @@ my_env = dotenv_values(f"{project_path}/.env")
 
 with DAG(
     dag_id="scrapy_pipeline",
-    start_date=datetime(2026, 1, 1),
-    schedule='@daily',
+    start_date=datetime(2026, 1, 1, tzinfo=pendulum.timezone("America/Sao_Paulo")),
+    schedule='30 19 * * *',
     catchup=False
 ) as dag:
     
