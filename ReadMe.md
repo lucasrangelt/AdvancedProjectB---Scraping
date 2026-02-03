@@ -4,50 +4,50 @@ Analyse the following hipothetical problem:
 
 "It was verified that the company did not meet the forecasted sales of its most sold items, that are notebooks, smartphones, tablets, headsets and consoles. Suspecting that rival e-commerces might have an attractive advantage price-wise, it's necessary to verify these prices to see whether there is or not such advantage and what its size is. The objective here is to build a pipeline in order to collect product data from an e-commerce website."
 
-Tendo o problema em mente, vamos às soluções.
+Having the problem in mind, let's go to the solutions.
 
-## Setup e instruções para rodar:
+## Setup and instructions to run it:
 
-1. Instale o Docker
-2. Insira o comando "docker compose up" com o terminal aberto na pasta principal do projeto (ou construa o container utilizando a ferramenta de sua preferência, como a extensão do VS Code)
-3. Remova o ".example" dos arquivos .env.example e dbt_project/profiles.yml.example
-4. Troque os comentários do .env pelas suas credenciais
-5. Defina um horário de funcionamento diário no arquivo dags/scrapy_pipeline.py, ou abra a interface do Airflow no seu navegador (endereço: http://localhost:8080/), insira "airflow" como nome de usuário e password (o ideal seria mudar essas credenciais depois) vá em dags e rode o scraper manualmente
+1. Install Docker
+2. Insert the command "docker compose up" with the terminal open on the project root folder (or build the containers using your preferred tool, like the VS Code extension)
+3. Remove the ".example" from the .env.example and dbt_project/profiles.yml.example files
+4. Change the .env comments to your credentials
+5. Define a daily working time for the file dags/scrapy_pipeline.py, or open the Airflow interface on your browser (link: http://localhost:8081/), insert "airflow" as both username and password (ideally you should change these credentials later), go to "dags" and run the scraper manually.
 
-# Ferramentas Escolhidas
+# Chosen Tools
 
-- Usei **VS Code** como meu IDE para programar em várias linguagens como **Python**, **Yaml**, **Jinja** e **SQL**.
-- Usei **WSL2** (ambiente virtual do Linux) para armazenar meu projeto, devido a velocidade superior e ao fato de ser o motor nativo do Docker.
-- Usei **Docker** para resolver problemas de dependências locais e globais, além de possibilitar que o sistema seja executado em qualquer máquina.
-- Usei **PostgreSQL** como base de dados para armazenar as informações coletadas dos produtos através do Scrapy.
-- Usei **DBeaver** para visualizar minhas bases de dados locais e da nuvem.
-- Usei **Python** para programar os arquivos do Scrapy, Airflow, entre outros.
-- Usei **Scrapy** para coletar os dados de diferentes sites.
-- Usei **SQL** para criar minhas bases de dados.
-- Usei **Data Build Tool (dbt)** para modelar, orquestrar, manipular dados em arquitetura Medallion e criar uma Star Schema.
-- Usei **Great Expectations** a fim de garantir a qualidade dos dados a serem inseridos na tabela final.
-- Usei **Airflow** para orquestrar e executar em horário fixo múltiplas tarefas dependentes entre si, buscando saber onde e como qualquer delas pode vir a falhar.
-- Usei **GitHub** para subir meu projeto e torná-lo acessível a todos.
-- Usei **GitHub Actions** para garantir que o código funcione sem erros de digitação e/ou integração, trazendo assim a CI/CD (integração e desenvolvimento contínuo) para o projeto.
-- Usei **.env**, **GitHub Secrets** e **AWS Secrets Manager** para garantir a segurança das minhas credenciais.
-- Usei **AWS** e suas ferramentas de **RDS, ECS/Fargate, ECR, IAM**, entre outros para subir e manter minha base de dados na nuvem, e garantir que o projeto possa rodar de forma remota.
-- Usei **Google Gemini** como ferramenta de auxílio para solucionar alguns erros de sintaxe e fazer a depuração (debug) de alguns erros/logs. Também usei para entender os vários usos e aplicações das ferramentas aplicadas.
+- I used **VS Code** as my programming IDE for many languages like **Python**, **Yaml**, **Jinja**, **SQL**, etc.
+- I used **WSL2** (Windows Subsystem for Linux) as a place to sit my project, due to its superior speed and the fact that it is Docker's native engine.
+- I used **Docker** in order to solve local and global dependency issues (dependency hell) and allow it to be executed on any machine.
+- I used **PostgreSQL** as my database to store product data that is extracted from Scrapy.
+- I used **DBeaver** in order to visualize both my local and cloud-based databases.
+- I used **Python** in order to write files from Scrapy, Airflow and many others.
+- I used **Scrapy** in order to collect data from multiple sites.
+- I used **SQL** in order to write queries for my databases.
+- I used **Data Build Tool (dbt)** to model, orchestrate and manipulate data in a Medallion Architecture and create a Star Schema.
+- I used **Great Expectations** in order to ensure the quality of the data to be inserted on the final tables.
+- I used **Airflow** to orchestrate and execute multiple interdependent tasks on fixed hour, seeking to know when and how any of them could come to fail.
+- I used **GitHub** to upload my project for everyone's visibility and accessibility.
+- I used **GitHub Actions** in order to ensure that my code will run with no typos and/or integration errors, therefore bringing CI/CD (Continuous Integration and Continuous Development) to the project.
+- I used **.env**, **GitHub Secrets** and **AWS Secrets Manager** in order to ensure credentials security.
+- I used **AWS** and its tools of **RDS, ECS/Fargate, ECR, IAM**, among others in order to upload and keep my database on the cloud, guaranteeing that the project could work remotely.
+- I used **Google Gemini** as an auxiliary tool for solving typos, syntax errors and debugging bugs/logs. I also used it in order to understand the many different uses and applications of the chosen tools.
 
-# Log e Processo de Desenvolvimento
+# Log and Development Process
 
-Dias anteriores: Planejei, estudei e tentei compreender como funciona a arquitetura de um projeto como um todo (visão macro).
+Days before: I planned, studied and tried to understand how the architecture of a project works as a whole (macro vision).
 
-Dia 31/12: Planejei, trabalhei no Scrapy e fui introduzido ao WSL2.
+Day 31/12: I planned and worked on Scrapy. I was also introduced to WSL2.
 
-### Diagrama de Arquitetura do Sistema
+### System Architecture Diagram
 
-![diagrama de arquitetura](imgs/1-arquitetura-2026-01-25-1726.png)
+![architecture-2026-01-25-1726](imgs/1-architecture-2026-01-25-1726.png)
 
-Dia 1: Planejei, trabalhei no Scrapy, ~~integrei Playwright ao programa~~ e integrei WSL2 ao VS Code.
+Day 1: I planned and worked on scrapy, ~~integrated Playwright on the program~~ and also integrated WSL2 on VS Code.
 
-Dia 2: Planejei, instalei o Docker, movi meu projeto para \\wsl$ e remapeei o repositório do GitHub ao novo local do projeto.
+Day 2: I planned, instalaled Docker, moved my project to \\wsl$ and remapped the GitHub repository to the new project root folder.
 
-Dia 3: Planejei, instalei um ambiente virtual para evitar "dependency hell" e Dev Containers para minhas extensões.
+Day 3: I planned, installed a virtual environment to avoid "dependency hell" and also installed Dec Containers for my extensions.
 
 Dia 4: Trabalhei para integrar toda a principal infraestrutura (Windows, WSL2, VS Code, .venv, Docker, GitHub, PostgreSQL).
 
