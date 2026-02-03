@@ -49,75 +49,79 @@ Day 2: I planned, instalaled Docker, moved my project to \\wsl$ and remapped the
 
 Day 3: I planned, installed a virtual environment to avoid "dependency hell" and also installed Dec Containers for my extensions.
 
-Dia 4: Trabalhei para integrar toda a principal infraestrutura (Windows, WSL2, VS Code, .venv, Docker, GitHub, PostgreSQL).
+Day 4: I worked to integrate all of the core infrastructure (Windows, WSL2, VS Code, ~~.venv~~, Docker, GitHub and PostgreSQL).
 
-Dia 5: Terminei de integrar toda a principal infraestrutura, corrigindo bugs e erros de mapeamento no GitHub.
+Day 5: Finished integrating the core infrastructure, fixing bugs and mapping errors on the GitHub repository.
 
-Dia 6: Integrei o scraper e DBeaver com o PostgreSQL do Docker.
+Day 6: Integrated the scraper and Dbeaver with Docker's PostgreSQL.
 
 ![dbeaver-database-vscode](imgs/2-dbeaver-database-vscode.png)
 
-Dia 7: Organizei, testei e corrigi bugs no scraper.
+Day 7: Organized, tested Organizei, testei e corrigi bugs no scraper.
 
-Dia 8: Planejei, editei, testei o scraper e instalei as bibliotecas de dbt e Great Expectations.
+Dia 8: Planned, updated and tested the scraper. I also installed the dbt and Great Expectations libraries.
 
 ![vscode-dbt-profiles](imgs/3-vscode-dbt-profiles.png)
 
-Dia 9: Planejei, criei pastas para o dbt e utilizei dbt para organizar dados e implementar uma Star Schema.
+Day 9: I planned and created paths for dbt and used the tool in order to organize data and implement a Star Schema.
 
 ![database-medallion](imgs/4-database-medallion.png)
 
-Dia 10: Implementei Great Expectations do começo ao fim.
+Day 10: Implemented Great Expectations from beginning to end.
 
-Dia 11: Corrigi bugs e erros no Great Expectations.
+Day 11: Fixed bugs and errors on Great Expectations.
 
 ![vscode-gx-validation](imgs/5-vscode-gx-validation.png)
 
-Dia 12: Comecei a preparar a infraestrutura do Airflow.
+Day 12: Started to prepare Airflow's infrastructure.
 
-Dia 13: Corrigi bugs e terminei de instalar a infraestrutura do Airflow e comecei a conectá-lo com as outras ferramentas.
+Day 13: Fixed bugs and finished installing Airflow's infrastructure and started connecting it to other tools.
 
-Dia 14: Continuei tentando implementar o Airflow usando a template da versão 2.0.
+Day 14: Kept trying to implement Airflow using the version 2.7.1 template.
 
-Dia 15: Troquei a minha template do Airflow pela oficial da versão 3.1.5. Terminei de implementar o Airflow.
+Day 15: I swapped my Airflow template for the official 3.1.5 one. Then, I finished implementing Airflow.
 
 ![docker-airflow](imgs/6-docker-airflow.png)
 
 ![airflow-ui](imgs/7-airflow-ui.png)
 
-Dia 16: Corrigi minhas credenciais e tornei elas secretas com o arquivo .env e comecei a implementar Github Actions para CI/CD.
+Day 16: Fixed my credentials, making them secret with the .env file and started to implement GitHub Actions for CI/CD.
 
-Dia 17: Corrigi erros de referência de credenciais e terminei de implementar GitHub Actions.
+Day 17: Fixed credential reference errors and finished implementing GitHub Actions.
 
-Dia 18: Planejei e enfrentei problemas de permissão no Azure devido a minha conta de universitário. Não consegui criar nova conta.
+Day 18: I planned and fought permission errors on Azure due to my university account. Couldn't create a normal account.
 
-Dia 19: Planejei, explorei o AWS e comecei os preparativos para subir o projeto para a nuvem.
+Day 19: I planned, explored AWS and began preparations to upload the project to the cloud.
 
-Dia 20: Criei toda a infraestrutura na nuvem e subi meu scraper para o ECR da AWS. Integrei o Airflow com a nuvem.
+Day 20: I created the whole cloud infrastructure and uploaded my scraper to the AWS ECR. I also integrated Airflow with AWS.
 
-Dia 21: Criei uma base de dados PostgreSQL na nuvem e corrigi mapeamentos de chaves e passwords.
+Day 21: Created a PostgreSQL database on the cloud and fixed key and passwords mapping.
 
-Dia 22: Corrigi os principais bugs, erros de permissões, etc. efetivamente concluindo a pipeline e o projeto principal.
+Day 22: Fixed the main bugs, permission errors, etc. effectively concluding the pipeline and the main project.
 
 ![aws-rds-services](imgs/8-aws-rds-services.png)
 
-Dia 23: Corrigi bugs silenciosos e resolvi fazer o Scrapy executar de forma local para evitar proxies.
+Day 23: Fixed silent bugs and decided to make Scrapy run locally in order to avoid private proxies.
 
-Dia 24: Escalei o scrapy, mudando o código para fazer scraping de 5 itens e adicionei novos scrapers para mais sites.
+Day 24: Scaled the scraper, changing code to scrape 5 items and also added new scrapers for more websites.
 
-Dia 25: Reuni informações para trabalhar no arquivo ReadMe.md e garantir uma boa apresentação do projeto.
+Day 25: Gathered information to work on the ReadMe.md file and ensure a good project presentation.
 
-Dia 26: Enfrentei erros "anti-bots" em vários sites no scrapy; atualizei meu ReadMe.md e coletei imagens para visualizações.
+Day 26: Fought "anti-bot" errors in multiple websites on scrapy; updated my ReadMe.md and gathered images for visualizations.
 
-Dia 27: Conclui meu arquivo ReamMe.md, terminando a apresentação do projeto.
+Day 27: Finished coding my ReadMe.md, concluding the project presentation.
 
-Dia 28: Garanti a exclusão de itens duplicados no dbt, ao mesmo tempo que facilitei a coleta de dados como "preço ao longo do tempo".
+Day 28: Ensured the exclusion of duplicated items on dbt, though I also eased data collection for "price over time".
 
-Dia 29: Melhorei o GX para dar um aviso no Discord quando em caso de um erro pequeno, em vez de parar a pipeline inteira.
+Day 29: Upgraded GX to warn me on Discord whenever there is a small error, instead of stopping the whole pipeline.
+
+Day 31: Changed my Airflow port from "8080:8080" to "8081:8080" due to browser endless-loading errors.
+
+Extra: Internationalized my ReadMe.md, translating the file from portuguese to english.
 
 ![pipeline-final-2026-01-27-0122](imgs/9-pipeline-final-2026-01-27-0122.png)
 
-# Aprendizados
+# Key Takes
 
 Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferramentas padrão de indústria para resolver cada uma das partes do sistema. Algumas ferramentas eu já tinha experiência, mas a maioria delas era novidade para mim. Apesar disso, consegui desenvolver bem as minhas ideias, graças ao vários recursos que busquei. Entre os vários aprendizados que obtive, eis os principais que poderão me ajudar para eventos futuros:
 

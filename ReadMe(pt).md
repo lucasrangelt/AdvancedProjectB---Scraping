@@ -77,7 +77,7 @@ Dia 12: Comecei a preparar a infraestrutura do Airflow.
 
 Dia 13: Corrigi bugs e terminei de instalar a infraestrutura do Airflow e comecei a conectá-lo com as outras ferramentas.
 
-Dia 14: Continuei tentando implementar o Airflow usando a template da versão 2.0.
+Dia 14: Continuei tentando implementar o Airflow usando a template da versão 2.7.1.
 
 Dia 15: Troquei a minha template do Airflow pela oficial da versão 3.1.5. Terminei de implementar o Airflow.
 
@@ -114,6 +114,10 @@ Dia 27: Conclui meu arquivo ReamMe.md, terminando a apresentação do projeto.
 Dia 28: Garanti a exclusão de itens duplicados no dbt, ao mesmo tempo que facilitei a coleta de dados como "preço ao longo do tempo".
 
 Dia 29: Melhorei o GX para dar um aviso no Discord quando em caso de um erro pequeno, em vez de parar a pipeline inteira.
+
+Dia 31: Mudei a porta do Airflow de "8080:8080" para "8081:8080" devido a erros de carregamento no navegador.
+
+Extra: Internacionalizei meu ReadMe.md, traduzindo o arquivo do português para o inglês.
 
 ![pipeline-final-2026-01-27-0122](imgs/9-pipeline-final-2026-01-27-0122.png)
 
