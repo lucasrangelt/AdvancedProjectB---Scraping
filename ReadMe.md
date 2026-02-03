@@ -24,13 +24,13 @@ Having the problem in mind, let's go to the solutions.
 - I used **Python** to write files from Scrapy, Airflow and many others.
 - I used **Scrapy** to collect data from multiple sites.
 - I used **SQL** to write queries for my databases.
-- I used **Data Build Tool (dbt)** to model and manipulate data in a Medallion Architecture and create a Star Schema.
+- I used **Data Build Tool (dbt)** to model and manipulate data with idempotency in a Medallion Architecture and create a Star Schema.
 - I used **Great Expectations** in order to ensure the quality of the data to be inserted on the final tables.
 - I used **Airflow** to orchestrate and execute multiple interdependent tasks on fixed hour, seeking to know when and how any of them could come to fail.
 - I used **GitHub** to host my project for everyone's visibility and accessibility.
 - I used **GitHub Actions** in order to ensure that my code will run with no typos and/or integration errors, therefore bringing CI/CD (Continuous Integration and Continuous Deployment) to the project.
 - I used **.env**, **GitHub Secrets** and **AWS Secrets Manager** in order to ensure credentials security.
-- I used **AWS** and its tools of **RDS, ECS/Fargate, ECR, IAM**, among others in order to deploy and keep my database on the cloud, guaranteeing that the project could work remotely.
+- I used **AWS** and its tools of **RDS, ECS/Fargate, ECR, IAM**, among others in order to deploy and keep my database on the cloud, guaranteeing that the project could work remotely (Hybrid Architecture).
 - I used **Google Gemini** as an auxiliary tool for debugging and code optimization. I also used it in order to understand the many different uses and applications of the chosen tools.
 
 # Log and Development Process
@@ -189,7 +189,7 @@ In this project, I learned on practice what it meant to use artificial intellige
 
 AI is like that old war veteran that, due to age, might end up "exaggerating" or "changing some things from their respective space-time". For instance, he might start talking about how "Eastern Germany is such a backwards country that goes against democracy and its citizens' freedom", and then you remind him that Germany has unified over 30 years ago only to be met with a "Oh, you are absolutely right!!" followed by him agreeing and talking about other things. He has a lot to teach, but if you want to listen to him, you need either a bit of base knowledge or a safe place to test his suppositions/suggestions, lest you fall victim to a code or integration that simply doesn't work, has vulnerabilities or is too outdated.
 
-Most of the time when the AI "hallucinated", was in relation to user interfaces (UI), like DBeaver. Which makes sense, since it's easier for it to work with text and logic elements than with buttons on a screen that it cannot see. Some time, when it came to eliminating the "master" branch that was automatically created by Docker, the AI suggested me a code that looked right at first, but pulled my project back well over a week of progress. Of course, I realized it was dangerous before executing the command and made a backup just in case. No final damage occured. Good judgement is vital to work with AI.
+Most of the time when the AI "hallucinated", was in relation to user interfaces (UI), like DBeaver. Which makes sense, since it's easier for it to work with text and logic elements than with buttons on a screen that it cannot see. Some time, when it came to eliminating the "master" branch that was automatically created by Docker, the AI suggested me a code that looked right at first, but pulled my project back well over a week of progress. Of course, I realized it was dangerous before executing the command and made a backup just in case. No final damage occurred. Good judgement is vital to work with AI.
 
 If the AI doesn't "give you the answer you want", it's practically 100% the way you word it. If you forget something or leave it too vague, the answer might come under-detailed. This is bad for specific/niche problems, but good for those wanting initial suggestions. If you exaggerate on the details, you might get an answer for 5 or 6 kinds of problems when you can barely access one of them. Working with AI taught me optimized ways of formulating questions in order to solve problems.
 
