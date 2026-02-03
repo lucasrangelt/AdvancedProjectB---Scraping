@@ -123,18 +123,18 @@ Extra: Internationalized my ReadMe.md, translating the file from portuguese to e
 
 # Key Takes
 
-Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferramentas padrão de indústria para resolver cada uma das partes do sistema. Algumas ferramentas eu já tinha experiência, mas a maioria delas era novidade para mim. Apesar disso, consegui desenvolver bem as minhas ideias, graças ao vários recursos que busquei. Entre os vários aprendizados que obtive, eis os principais que poderão me ajudar para eventos futuros:
+Learned to develop an end-to-end data pipeline using industry-standard tools to solve each parts of the system. Some tools I already knew about (Python, SQL, PostgreSQL), but most of them were new to me. Even though, I managed to develop my ideas well, thanks to the many resources I searched for. Among the many key takes I had, here are some of the main ones, indispensable for future events:
 
-- Aprendi várias templates de arquivos como Dockerfile, docker-compose.yml, main.yml, DAG.py, etc.
-- Não "forçar" a template da versão de uma ferramenta para outra versão.
-- Focar na segurança, arquitetura e infraestrutura do projeto primeiro e apenas depois na sintaxe das ferramentas.
-- Aprendi como funciona todo o ciclo de uma pipeline, o processo de coleta (API Endpoint/Scrapy/outras possíveis ferramentas), modelagem (dbt), qualidade (GX), armazenamento (PostgreSQL/RDS), orquestramento (Airflow), etc.
-- Sempre começar um projeto utilizando .env quando necessário, em vez de implementar depois.
-- Aprendi a não me importar com "marcas" e sim com a entrega do projeto. Quando a Azure me rejeitou (3 vezes), fui para a competição para garantir continuidade.
-- Ao criar uma base de dados no AWS, apenas uma instância será criada. O nome dela será postgres, apesar de algum outro nome escolhido. Para resolver isso, deve-se entrar no DBeaver (ou na ferramenta de visualização utilizada), conectar-se à instância na nuvem e criar uma com o nome desejado.
-- No final, escolhi puxar o meu scraper de volta para o ambiente local, pois caso contrário iria ter que pagar proxies privadas para fazer scraping. O Airflow também ficou na minha máquina local, visto que iria ser desnecessariamente caro ter uma ferramenta tão complexa e pesada rodando em nuvem.
+- Learned many templates for files like Dockerfile, docker-compose.yml, main.yml, DAG.py, etc.
+- Learned to not force a certain version's template of a tool on another version.
+- To focus on project security, architecture and infrastructure first and then on the tools' syntax.
+- Learned how a whole pipeline cycle works, the data extraction process (API Endpoint/Scrapy/other possible tools), modelling (dbt), quality (GX), storage (PostgreSQL/RDS), orchestration (Airflow), etc.
+- Always begin a project adding the .env file if necessary. Don't wait for later.
+- Don't worry about "brands", but about project delivery. When Azure rejected me (3 times), I let myself be sent to competition in order to ensure progress.
+- When creating a database on AWS, only a single instance will be created. Its name will be postgres, regardless of the other chosen name. In order to fix that, go on DBeaver (or whatever visualization tool you're using), connect to the cloud instance and create a database with a name of your choice.
+- In the end, I chose to pull my scraper back to the local environment, for otherwise I would have to pay for private proxies in order to do scraping. Airflow also stood on my local machine, seeing that it would have been unecessarily expensive to have such a demanding and heavy tool running on cloud.
 
-# Créditos e Referências
+# Credits and References
 
 ![2026-01-02-Google-Gemini-1](imgs/creditos/2026-01-02-Google-Gemini-1.png)
 ![2026-01-02-Google-Gemini-2](imgs/creditos/2026-01-02-Google-Gemini-2.png)
@@ -163,19 +163,19 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 
 ### Links
 
-- Projeto Tutorial de Python: https://github.com/lucasrangelt/PYTHONproject
-- Projeto Tutorial de SQL: https://github.com/lucasrangelt/SQLcourse
-- Plataforma de Diagramação: https://excalidraw.com/
-- Instalando o Docker: https://www.youtube.com/watch?time_continue=1599&v=lP8xXebHmuE&embeds_referring_euri=https%3A%2F%2Fgemini.google.com%2F&embeds_referring_origin=https%3A%2F%2Fgemini.google.com&source_ve_path=Mjg2NjY
-- Tutorial de Airflow/AWS: https://www.youtube.com/watch?v=o88LNQDH2uI
-- Tutorial para Instalar Airflow no Docker: https://www.youtube.com/watch?v=ma8OuIz-ai0
-- Airflow 3.1.5 (Documentação): https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
-- Para referências e Debug: https://www.startdataengineering.com/
-- Curso de Engenharia de Dados da IBM: https://www.coursera.org/professional-certificates/ibm-data-engineer
+- Python Tutorial Project: https://github.com/lucasrangelt/PYTHONproject
+- SQL Tutorial Project: https://github.com/lucasrangelt/SQLcourse
+- Diagram Platform: https://excalidraw.com/
+- Installing Docker: https://www.youtube.com/watch?time_continue=1599&v=lP8xXebHmuE&embeds_referring_euri=https%3A%2F%2Fgemini.google.com%2F&embeds_referring_origin=https%3A%2F%2Fgemini.google.com&source_ve_path=Mjg2NjY
+- Airflow/AWS Tutorial: https://www.youtube.com/watch?v=o88LNQDH2uI
+- Tutorial to Install Airflow on Docker: https://www.youtube.com/watch?v=ma8OuIz-ai0
+- Airflow 3.1.5 (Documentation): https://airflow.apache.org/docs/apache-airflow/stable/howto/docker-compose/index.html
+- For references and debug: https://www.startdataengineering.com/
+- IBM Data Engineering Course: https://www.coursera.org/professional-certificates/ibm-data-engineer
 ---
 ---
 ---
-### Links do Gemini
+### Gemini Links
 
 - Tactical Executions: https://gemini.google.com/share/9b04f1af5a43
 - Implement the things you need to learn: https://gemini.google.com/share/860923366ed0
@@ -183,7 +183,7 @@ Aprendi a desenvolver uma pipeline de dados do começo ao fim utilizando ferrame
 - Dbt Source YAML Comparison: https://gemini.google.com/share/1272ec020734
 - Data Engineering and Web Scraping Frequency: https://gemini.google.com/share/4834319f82fd
 
-### Uso da IA
+### AI Use Disclosure
 
 Neste projeto, eu descobri o que significa usar a inteligência artificial como ferramenta de desenvolvimento na prática. Apesar da IA ajudar com algumas sugestões, se não forem ideais e o desenvolvedor aceitar e se aprofundar nelas, o controle do "leme" pode ser perdido.
 
