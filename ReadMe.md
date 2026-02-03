@@ -1,8 +1,8 @@
 # Introduction
 
-Analyse the following hipothetical problem:
+Analyze the following hypothetical problem:
 
-"It was verified that the company did not meet the forecasted sales of its most sold items, that are notebooks, smartphones, tablets, headsets and consoles. Suspecting that rival e-commerces might have an attractive advantage price-wise, it's necessary to verify these prices to see whether there is or not such advantage and what its size is. The objective here is to build a pipeline in order to collect product data from an e-commerce website."
+"It was verified that the company did not meet the forecasted sales of its most sold items, that are notebooks, smartphones, tablets, headsets and consoles. Suspecting that rival e-commerce might have a pricing advantage, it's essential to monitor these prices to see whether there is or not such advantage and what its size is. The objective here is to build a pipeline in order to collect product data from an e-commerce website."
 
 Having the problem in mind, let's go to the solutions.
 
@@ -17,21 +17,21 @@ Having the problem in mind, let's go to the solutions.
 # Chosen Tools
 
 - I used **VS Code** as my programming IDE for many languages like **Python**, **Yaml**, **Jinja**, **SQL**, etc.
-- I used **WSL2** (Windows Subsystem for Linux) as a place to sit my project, due to its superior speed and the fact that it is Docker's native engine.
-- I used **Docker** in order to solve local and global dependency issues (dependency hell) and allow it to be executed on any machine.
+- I used **WSL2** (Windows Subsystem for Linux) as a development environment, due to its superior speed and the fact that it is Docker's native engine.
+- I used **Docker** to solve local and global dependency issues (dependency hell) and allow it to be executed on any machine.
 - I used **PostgreSQL** as my database to store product data that is extracted from Scrapy.
-- I used **DBeaver** in order to visualize both my local and cloud-based databases.
-- I used **Python** in order to write files from Scrapy, Airflow and many others.
-- I used **Scrapy** in order to collect data from multiple sites.
-- I used **SQL** in order to write queries for my databases.
-- I used **Data Build Tool (dbt)** to model, orchestrate and manipulate data in a Medallion Architecture and create a Star Schema.
+- I used **DBeaver** to visualize both my local and cloud-based databases.
+- I used **Python** to write files from Scrapy, Airflow and many others.
+- I used **Scrapy** to collect data from multiple sites.
+- I used **SQL** to write queries for my databases.
+- I used **Data Build Tool (dbt)** to model and manipulate data in a Medallion Architecture and create a Star Schema.
 - I used **Great Expectations** in order to ensure the quality of the data to be inserted on the final tables.
 - I used **Airflow** to orchestrate and execute multiple interdependent tasks on fixed hour, seeking to know when and how any of them could come to fail.
-- I used **GitHub** to upload my project for everyone's visibility and accessibility.
-- I used **GitHub Actions** in order to ensure that my code will run with no typos and/or integration errors, therefore bringing CI/CD (Continuous Integration and Continuous Development) to the project.
+- I used **GitHub** to host my project for everyone's visibility and accessibility.
+- I used **GitHub Actions** in order to ensure that my code will run with no typos and/or integration errors, therefore bringing CI/CD (Continuous Integration and Continuous Deployment) to the project.
 - I used **.env**, **GitHub Secrets** and **AWS Secrets Manager** in order to ensure credentials security.
-- I used **AWS** and its tools of **RDS, ECS/Fargate, ECR, IAM**, among others in order to upload and keep my database on the cloud, guaranteeing that the project could work remotely.
-- I used **Google Gemini** as an auxiliary tool for solving typos, syntax errors and debugging bugs/logs. I also used it in order to understand the many different uses and applications of the chosen tools.
+- I used **AWS** and its tools of **RDS, ECS/Fargate, ECR, IAM**, among others in order to deploy and keep my database on the cloud, guaranteeing that the project could work remotely.
+- I used **Google Gemini** as an auxiliary tool for debugging and code optimization. I also used it in order to understand the many different uses and applications of the chosen tools.
 
 # Log and Development Process
 
@@ -47,7 +47,7 @@ Day 1: I planned and worked on scrapy, ~~integrated Playwright on the program~~ 
 
 Day 2: I planned, instalaled Docker, moved my project to \\wsl$ and remapped the GitHub repository to the new project root folder.
 
-Day 3: I planned, installed a virtual environment to avoid "dependency hell" and also installed Dec Containers for my extensions.
+Day 3: I planned, installed a virtual environment to avoid "dependency hell" and also installed Dev Containers for my extensions.
 
 Day 4: I worked to integrate all of the core infrastructure (Windows, WSL2, VS Code, ~~.venv~~, Docker, GitHub and PostgreSQL).
 
@@ -57,9 +57,9 @@ Day 6: Integrated the scraper and Dbeaver with Docker's PostgreSQL.
 
 ![dbeaver-database-vscode](imgs/2-dbeaver-database-vscode.png)
 
-Day 7: Organized, tested Organizei, testei e corrigi bugs no scraper.
+Day 7: Organized, tested and fixed bugs on the scraper.
 
-Dia 8: Planned, updated and tested the scraper. I also installed the dbt and Great Expectations libraries.
+Day 8: Planned, updated and tested the scraper. I also installed the dbt and Great Expectations libraries.
 
 ![vscode-dbt-profiles](imgs/3-vscode-dbt-profiles.png)
 
@@ -89,11 +89,11 @@ Day 16: Fixed my credentials, making them secret with the .env file and started 
 
 Day 17: Fixed credential reference errors and finished implementing GitHub Actions.
 
-Day 18: I planned and fought permission errors on Azure due to my university account. Couldn't create a normal account.
+Day 18: I planned and ran into permission errors on Azure due to my university account; couldn't create a normal account.
 
-Day 19: I planned, explored AWS and began preparations to upload the project to the cloud.
+Day 19: I planned, explored AWS and began preparations to deploy the project to the cloud.
 
-Day 20: I created the whole cloud infrastructure and uploaded my scraper to the AWS ECR. I also integrated Airflow with AWS.
+Day 20: I created the whole cloud infrastructure and deploy my scraper to the AWS ECR. I also integrated Airflow with AWS.
 
 Day 21: Created a PostgreSQL database on the cloud and fixed key and passwords mapping.
 
@@ -107,7 +107,7 @@ Day 24: Scaled the scraper, changing code to scrape 5 items and also added new s
 
 Day 25: Gathered information to work on the ReadMe.md file and ensure a good project presentation.
 
-Day 26: Fought "anti-bot" errors in multiple websites on scrapy; updated my ReadMe.md and gathered images for visualizations.
+Day 26: Ran into "anti-bot" errors in multiple websites on scrapy; updated my ReadMe.md and gathered images for visualizations.
 
 Day 27: Finished coding my ReadMe.md, concluding the project presentation.
 
@@ -185,29 +185,29 @@ Learned to develop an end-to-end data pipeline using industry-standard tools to 
 
 ### AI Use Disclosure
 
-Neste projeto, eu descobri o que significa usar a inteligência artificial como ferramenta de desenvolvimento na prática. Apesar da IA ajudar com algumas sugestões, se não forem ideais e o desenvolvedor aceitar e se aprofundar nelas, o controle do "leme" pode ser perdido.
+In this project, I learned on practice what it meant to use artificial intelligence as a developing tool. Despite AI helping with many suggestions, if they are not ideal and the developer accepts them and goes deep into them, he might lose control of the "steering wheel".
 
-A IA é como aquele veterano de guerra que, devido à idade, pode acabar "aumentando" ou "trocando as coisas de espaço temporal". Por exemplo, ele pode começar a falar sobre como "a Alemanha Oriental é um país ultrapassado, que vai contra a democracia e os direitos dos seus cidadãos", e aí você lembra ele de que a Alemanha se unificou há mais de 30 anos e ele responde com "Você está absolutamente certo!!" e começa a concordar e a contar coisas. Ele tem muito a ensinar, mas quem está ouvindo deve ter ou um pouco de conhecimento prévio, ou um lugar seguro para testar o que foi ouvido antes de sair espalhando informação desatualizada.
+AI is like that old war veteran that, due to age, might end up "exaggerating" or "changing some things from their respective space-time". For instance, he might start talking about how "Eastern Germany is such a backwards country that goes against democracy and its citizens' freedom", and then you remind him that Germany has unified over 30 years ago only to be met with a "Oh, you are absolutely right!!" followed by him agreeing and talking about other things. He has a lot to teach, but if you want to listen to him, you need either a bit of base knowledge or a safe place to test his suppositions/suggestions, lest you fall victim to a code or integration that simply doesn't work, has vulnerabilities or is too outdated.
 
-Na maioria dos casos que a IA "alucinou" foi em relação às interfaces de usuário (UI), como DBeaver, o que faz sentido, pois é mais fácil para ela trabalhar com elementos de texto e lógica do que botões em uma tela que ela não consegue ver. Teve uma vez, na hora de eliminar a branch "master" que havia sido criada, a IA me sugeriu um código que parecia certo no começo, mas puxou o meu projeto em uma semana de progresso. Claro que eu percebi isso no comando e fiz backup logo antes de executar. Nenhum dano ocorreu no final. Discernimento é extremamente necessário para se trabalhar com IA.
+Most of the time when the AI "hallucinated", was in relation to user interfaces (UI), like DBeaver. Which makes sense, since it's easier for it to work with text and logic elements than with buttons on a screen that it cannot see. Some time, when it came to eliminating the "master" branch that was automatically created by Docker, the AI suggested me a code that looked right at first, but pulled my project back well over a week of progress. Of course, I realized it was dangerous before executing the command and made a backup just in case. No final damage occured. Good judgement is vital to work with AI.
 
-Se a IA não "te dá a resposta que você quer", é praticamente 100% por causa do jeito que a questão foi formulada: Se você esquecer alguma coisa ou deixar muito vago, a resposta pode não vir muito bem detalhada. Isso pode ser ruim para problemas específicos, ou bom para quem quer sugestões iniciais. Se exagerar nos detalhes, pode-se receber a resposta para 5 ou 6 tipos de problemas quando mal se tem acesso a um deles. Trabalhar com a IA me ensinou jeitos otimizados de se fazer perguntas para resolver problemas.
+If the AI doesn't "give you the answer you want", it's practically 100% the way you word it. If you forget something or leave it too vague, the answer might come under-detailed. This is bad for specific/niche problems, but good for those wanting initial suggestions. If you exaggerate on the details, you might get an answer for 5 or 6 kinds of problems when you can barely access one of them. Working with AI taught me optimized ways of formulating questions in order to solve problems.
 
-Ressaltando que, apesar das várias boas sugestões que recebi, no final eu soube assumir o controle e filtrar as que não me agradava. Eis a seguir algumas dessas sugestões (que também provavelmente serão encontradas em algum lugar da conversa "Tactical Executions"):
+Let's remember that, despite the many good suggestions I received, in the end I took control and filtered out the ones not to my liking. Here are some of these suggestions (they will probably also be found somewhere within the "Tactical Executions" conversation):
 
-- IA me sugeriu utilizar o BeautifulSoup. Após comparar, escolhi o Scrapy, visando escalabilidade e performance.
-- IA sugeriu que eu fizesse scraping apenas de um site, mas construi outros scrapers para confirmar a escalabilidade.
-- IA sugeriu colocar o "docker-compose.yml" dentro da .devcontainers. Segui a sugestão, mas acabei puxando para a root depois.
-- IA sugeriu colocar minhas credenciais nos scripts python (clássico). Eu usei .env devido aos riscos de segurança. 
-- IA sugeriu Airflow 2.7.1. Eu escolhi Airflow 3.1.5 por ser mais atualizado.
-- IA sugeriu sintaxe desatualizada para importar dependências no GX. Verifiquei a documentação e atualizei o código.
-- Decidi deletar todas as minhas imagens e volumes (menos o Postgres) e reconstruir para ver se funcionava normal.
-- IA me sugeriu seguir Scrapy >>> dbt (tabela final) >>> GX no Airflow. Escolhi Scrapy >>> dbt (tabela stg) >>> GX >>> dbt (tabela final) para filtrar dados antes de carregar.
-- IA me sugeriu usar o termo "prod" no GitHub Actions. Preferi usar o target "ci" por parecer mais apropriado.
-- IA me sugeriu usar variáveis env como "DB_USER". Escolhi "ENV_USER" pela relação próxima com códigos relacionados.
-- IA me sugeriu usar um comando bash para instalar AWS CLI para meu aplicativo em container. Escolhi instalar no Dockerfile.
-- IA me sugeriu restringir para que apenas minha "main" branch publicasse no AWS. Permiti todas, a fim de testar possibilidades.
+- AI suggested that I use BeautifulSoup. After making a comparison, I chose Scrapy due to scalability and performance.
+- AI suggested that I do scraping of only one site, but I built other scrapers to assure scalability.
+- AI suggested that my "docker-compose.yml" be put inside the .devcontainers. I followed it, but pulled it to root later.
+- AI suggested that I hardcode my credentials (a classic). I used .env due to security risks.
+- AI suggested Airflow 2.7.1. I chose Airflow 3.1.5 for being more up to date.
+- AI suggested outdated syntax to import GX dependencies. I verified the documentation and updated my code.
+- I decided to deleta and rebuild all of my images and volumes (save for my Postgres database) in order to check if it still worked.
+- AI suggested that I follow Scrapy >>> dbt >>> GX on Airflow. I chose Scrapy >>> dbt (stg table) >>> GX >>> dbt (end table) for filtering data before loading.
+- AI suggested that I use the term "prod" on Github Actions. I preferred to use target "ci" for sounding more appropriate.
+- AI suggested naming env variables like "DB_USER". I chose "ENV_USER" for its relation to related env code.
+- AI suggested me a bash command to install AWS CLI on my app container. I chose to install it on the Dockerfile.
+- AI suggested restricting access to publish on AWS exclusively to my "main" branch. I allowed all of them in order to test possibilities.
 
-**Meu e-mail: lucasrangel2011@gmail.com**
+**My e-mail: lucasrangel2011@gmail.com**
 
-**Meu LinkedIn: https://www.linkedin.com/in/lucas-rangel-tietbohl-29791237b/**
+**My LinkedIn: https://www.linkedin.com/in/lucas-rangel-tietbohl-29791237b/**

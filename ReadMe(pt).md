@@ -24,7 +24,7 @@ Tendo o problema em mente, vamos às soluções.
 - Usei **Python** para programar os arquivos do Scrapy, Airflow, entre outros.
 - Usei **Scrapy** para coletar os dados de diferentes sites.
 - Usei **SQL** para criar minhas bases de dados.
-- Usei **Data Build Tool (dbt)** para modelar, orquestrar, manipular dados em arquitetura Medallion e criar uma Star Schema.
+- Usei **Data Build Tool (dbt)** para modelar e manipular dados em arquitetura Medallion e criar uma Star Schema.
 - Usei **Great Expectations** a fim de garantir a qualidade dos dados a serem inseridos na tabela final.
 - Usei **Airflow** para orquestrar e executar em horário fixo múltiplas tarefas dependentes entre si, buscando saber onde e como qualquer delas pode vir a falhar.
 - Usei **GitHub** para subir meu projeto e torná-lo acessível a todos.
