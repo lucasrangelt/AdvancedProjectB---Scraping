@@ -9,9 +9,11 @@ Having the problem in mind, let's go to the solutions.
 ## Setup and instructions to run it:
 
 1. Install Docker
-2. Run the command "mv .env.example .env; mv dbt_project/profiles.yml.example dbt_project/profiles.yml" with the terminal open on the project root folder
-3. Change the .env comments to your credentials
-4. Insert the command "docker compose up" with the terminal open on the project root folder (or build the containers using your preferred tool, like the VS Code extension)
+2. Run the following command with the terminal open on the project root folder:
+```"mv .env.example .env; mv dbt_project/profiles.yml.example dbt_project/profiles.yml; sed -i '' -e 's/AIRFLOW_UID=.*/AIRFLOW_UID=1000/g' -e 's/ENV_HOST=.*/ENV_HOST=db/g' -e 's/ENV_USER=.*/ENV_USER=yourpostgresuser/g' -e 's/ENV_PASSWORD=.*/ENV_PASSWORD=examplepassword/g' -e 's/ENV_DATABASE=.*/ENV_DATABASE=placeholdername/g' -e 's/ENV_PORT=.*/ENV_PORT=5432/g' .env"```
+3. Insert the command `docker compose up -d` with the terminal open on the project root folder (or build the containers using your preferred tool, like the VS Code extension)
+4. Generate a Fernet key for Airflow using the command `docker run --rm python:3.11-slim /bin/bash -c \
+"pip install cryptography -q && python3 -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())'"` and paste it inside the .env file.
 5. Define a daily working time for the file dags/scrapy_pipeline.py, or open the Airflow interface on your browser (link: http://localhost:8081/), insert "airflow" as both username and password (ideally you should change these credentials later), go to "dags" and run the scraper manually.
 
 # Chosen Tools
