@@ -9,9 +9,9 @@ Having the problem in mind, let's go to the solutions.
 ## Setup and instructions to run it:
 
 1. Install Docker
-2. Insert the command "docker compose up" with the terminal open on the project root folder (or build the containers using your preferred tool, like the VS Code extension)
-3. Remove the ".example" from the .env.example and dbt_project/profiles.yml.example files
-4. Change the .env comments to your credentials
+2. Run the command "mv .env.example .env; mv dbt_project/profiles.yml.example dbt_project/profiles.yml" with the terminal open on the project root folder
+3. Change the .env comments to your credentials
+4. Insert the command "docker compose up" with the terminal open on the project root folder (or build the containers using your preferred tool, like the VS Code extension)
 5. Define a daily working time for the file dags/scrapy_pipeline.py, or open the Airflow interface on your browser (link: http://localhost:8081/), insert "airflow" as both username and password (ideally you should change these credentials later), go to "dags" and run the scraper manually.
 
 # Chosen Tools

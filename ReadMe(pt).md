@@ -9,10 +9,10 @@ Tendo o problema em mente, vamos às soluções.
 ## Setup e instruções para rodar:
 
 1. Instale o Docker
-2. Insira o comando "docker compose up" com o terminal aberto na pasta principal do projeto (ou construa o container utilizando a ferramenta de sua preferência, como a extensão do VS Code)
-3. Remova o ".example" dos arquivos .env.example e dbt_project/profiles.yml.example
-4. Troque os comentários do .env pelas suas credenciais
-5. Defina um horário de funcionamento diário no arquivo dags/scrapy_pipeline.py, ou abra a interface do Airflow no seu navegador (endereço: http://localhost:8080/), insira "airflow" como nome de usuário e password (o ideal seria mudar essas credenciais depois) vá em dags e rode o scraper manualmente
+2. Insira o comando "mv .env.example .env; mv dbt_project/profiles.yml.example dbt_project/profiles.yml" com o terminal aberto na pasta principal do projeto
+3. Troque os comentários do .env pelas suas credenciais
+4. Insira o comando "docker compose up" com o terminal aberto na pasta principal do projeto (ou construa o container utilizando a ferramenta de sua preferência, como a extensão do VS Code)
+5. Defina um horário de funcionamento diário no arquivo dags/scrapy_pipeline.py, ou abra a interface do Airflow no seu navegador (endereço: http://localhost:8081/), insira "airflow" como nome de usuário e password (o ideal seria mudar essas credenciais depois) vá em dags e rode o scraper manualmente
 
 # Ferramentas Escolhidas
 
