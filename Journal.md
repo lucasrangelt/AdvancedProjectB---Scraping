@@ -136,6 +136,8 @@ Learned to develop an end-to-end data pipeline using industry-standard tools to 
 ---
 ---
 ---
+- I used **Google Gemini** as an auxiliary tool for debugging and code optimization. I also used it in order to understand the many different uses and applications of the chosen tools.
+
 ### Gemini Links
 
 - Tactical Executions: https://gemini.google.com/share/9b04f1af5a43

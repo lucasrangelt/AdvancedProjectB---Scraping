@@ -50,9 +50,6 @@ First things first: bear in mind that this project is supposed to be run on eith
 - I used **.env**, **GitHub Secrets** and **AWS Secrets Manager** in order to ensure credentials security.
 - I used **AWS** and its tools of **RDS, ECS/Fargate, ECR, IAM**, among others in order to deploy and keep my database on the cloud, guaranteeing that the project could work remotely (Hybrid Architecture).
 
-### Others
-- I used **Google Gemini** as an auxiliary tool for debugging and code optimization. I also used it in order to understand the many different uses and applications of the chosen tools.
-
 **My e-mail: lucasrangel2011@gmail.com**
 
 **My LinkedIn: https://www.linkedin.com/in/lucas-rangel-tietbohl-29791237b/**
