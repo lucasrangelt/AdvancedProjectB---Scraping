@@ -12,8 +12,7 @@ First things first: bear in mind that this project is supposed to be run on eith
 
 1. Install Docker (+ Docker Compose)
 2. Run `git clone https://github.com/lucasrangelt/AdvancedProjectB---Scraping.git`
-3. Run the following command with the terminal open on the project root folder:
-```"mv .env.example .env; mv dbt_project/profiles.yml.example dbt_project/profiles.yml"```
+3. Run the following command with the terminal open on the project root folder: `"mv .env.example .env; mv dbt_project/profiles.yml.example dbt_project/profiles.yml"`
 4. Generate a Fernet key for Airflow using the command `docker run --rm python:3.11-slim /bin/bash -c \
 "pip install cryptography -q && python3 -c 'from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())'"` and paste it inside the .env file.
 5. Insert the command `docker compose up -d` with the terminal open on the project root folder (or build the containers using your preferred tool, like the VS Code extension)
