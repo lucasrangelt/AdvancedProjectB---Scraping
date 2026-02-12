@@ -17,7 +17,7 @@ ENV_PORT = os.getenv("ENV_PORT")
 # def send_discord_alert(error_message):
 #     data = {
 #         "content": error_message,
-#         "username": "PC GX Quality Bot"
+#         "username": "PC GX Quality Bot" #You can customize the username that appears in Discord
 #     }
 #     try:
 #         response = requests.post(ENV_DISCORD_WEBHOOK_URL, json=data)
