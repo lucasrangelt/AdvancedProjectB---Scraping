@@ -12,18 +12,18 @@ ENV_USER = os.getenv("ENV_USER")
 ENV_PASSWORD = os.getenv("ENV_PASSWORD")
 ENV_DATABASE = os.getenv("ENV_DATABASE")
 ENV_PORT = os.getenv("ENV_PORT")
-ENV_DISCORD_WEBHOOK_URL = os.getenv("ENV_DISCORD_WEBHOOK_URL")
+# ENV_DISCORD_WEBHOOK_URL = os.getenv("ENV_DISCORD_WEBHOOK_URL")
 
-def send_discord_alert(error_message):
-    data = {
-        "content": error_message,
-        "username": "PC GX Quality Bot"
-    }
-    try:
-        response = requests.post(ENV_DISCORD_WEBHOOK_URL, json=data)
-        response.raise_for_status()
-    except Exception as e:
-        print(f"Failed to send Discord alert: {e}")
+# def send_discord_alert(error_message):
+#     data = {
+#         "content": error_message,
+#         "username": "PC GX Quality Bot"
+#     }
+#     try:
+#         response = requests.post(ENV_DISCORD_WEBHOOK_URL, json=data)
+#         response.raise_for_status()
+#     except Exception as e:
+#         print(f"Failed to send Discord alert: {e}")
 
 def func():
     project_path = Path(__file__).parent.resolve()
@@ -38,7 +38,7 @@ def func():
     if not result.success:
         error_message = "⚠️ ⚠️ ⚠️ ⚠️ ⚠️  Data quality warning: validations not passed. Check your GX html and dbt modelling.⚠️ ⚠️ ⚠️ ⚠️ ⚠️"
         print(error_message)
-        send_discord_alert(error_message)
+        # send_discord_alert(error_message)
         sys.exit(0)
     else:
         print("Data quality passed! Safe to trigger dbt.")
